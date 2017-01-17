@@ -1,0 +1,113 @@
+﻿@model IEnumerable<NFLData.Models.PlayerModel>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>View</h2>
+
+<form role="form" method="post">
+    <fieldset>
+        <div class="form-group">
+            <input class="form-control" placeholder="Quarterback" name="Quarterback" type="text" autofocus>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Search</button>
+    </fieldset>
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quarterback)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attempt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Completion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yards)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YardsPerAttempt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Touchdown)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interception)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Long)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sack)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loss)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPoints)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeOrAway)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quarterback)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attempt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Completion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yards)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YardsPerAttempt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Touchdown)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Interception)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Long)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPoints)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeOrAway)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+        </tr>
+    }
+
+</table>
