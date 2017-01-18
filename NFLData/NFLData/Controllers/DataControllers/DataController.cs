@@ -20,6 +20,7 @@ namespace NFLData.Controllers.DataControllers
     {
         public static SqlDatabase db;
 
+        //connection string code to make SQL connection through the web config
         public DataController(string connectionstring)
         {
             db = new SqlDatabase(WebConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
@@ -39,7 +40,8 @@ namespace NFLData.Controllers.DataControllers
                 }
             }
         }
-        //write more code down here
+        
+        //data controller to pull all player data based on quarterback name
         public List<PlayerModel> GetPlayer(string Quarterback)
         {
             // Readies stored proc from server.

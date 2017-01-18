@@ -10,16 +10,19 @@ namespace NFLData.Controllers
 {
     public class HomeController : Controller
     {
+        //useless start page left index alone
         public ActionResult Index()
         {
             return View();
         }
 
+        //this about is where I stored the code for the data pull
         public ActionResult About()
         {
             return View();
         }
 
+        //takes the form input and passes it to the data controller
         [HttpPost]
         public ActionResult About(string Quarterback)
         {
@@ -30,6 +33,7 @@ namespace NFLData.Controllers
             return View(pm);
         }
 
+        //useless
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
