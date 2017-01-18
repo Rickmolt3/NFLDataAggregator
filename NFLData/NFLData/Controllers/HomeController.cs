@@ -15,9 +15,9 @@ namespace NFLData.Controllers
             return View();
         }
 
-        public ActionResult About(PlayerModel pm)
+        public ActionResult About()
         {
-            return View(pm);
+            return View();
         }
 
         [HttpPost]
