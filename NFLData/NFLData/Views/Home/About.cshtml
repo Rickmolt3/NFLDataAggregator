@@ -5,34 +5,34 @@
 
 @if (Model == null)
 {
-    <div>
-
-    </div>
+   <div class="">
     <form role="form" method="post">
         <fieldset>
             <div class="form-group">
                 <input class="form-control" placeholder="Quarterback" name="Quarterback" type="text" autofocus>
             </div>
-            <button type="submit" class="btn btn-success btn-block">Search</button>
+            <button type="submit" class="btn btn-primary">Search</button>
         </fieldset>
     </form>
-
+   </div>
 }
 else if (Model != null)
 {
-    <div>
-
+    <div class="">
+        <form role="form" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Quarterback" name="Quarterback" type="text" autofocus>
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </fieldset>
+        </form>
     </div>
-    <form role="form" method="post">
-        <fieldset>
-            <div class="form-group">
-                <input class="form-control" placeholder="Quarterback" name="Quarterback" type="text" autofocus>
-            </div>
-            <button type="submit" class="btn btn-success btn-block">Search</button>
-        </fieldset>
-    </form>
     <table class="table">
         <tr>
+            <th>
+                Game
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Quarterback)
             </th>
@@ -78,9 +78,14 @@ else if (Model != null)
             <th></th>
         </tr>
 
+        @{int rowNo=0;}
+
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @(rowNo+=1)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Quarterback)
                 </td>

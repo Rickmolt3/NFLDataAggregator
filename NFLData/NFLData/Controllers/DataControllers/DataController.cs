@@ -56,7 +56,7 @@ namespace NFLData.Controllers.DataControllers
                           select new PlayerModel()
                           {
 
-                              Quarterback = Quarterback,
+                              Quarterback = drRow.Field<string>("Quarterback"),
                               Attempt = drRow.Field<int>("Attempt"),
                               Completion = drRow.Field<int>("Completion"),
                               Yards = drRow.Field<int>("Yards"),
