@@ -57,7 +57,7 @@ namespace NFLData.Controllers
 
             List<YardageModel> pm = dc.GetAllYardage();
 
-            IEnumerable<YardageModel> pma = pm.OrderByDescending(x => x.Yards);
+            IEnumerable<YardageModel> pma = pm.OrderByDescending(x => x.Yards);//by default the yards are sorted from highest to lowest
 
             return View("QuarterbackYards", pma);
         }
