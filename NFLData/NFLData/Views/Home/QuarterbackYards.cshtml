@@ -1,13 +1,9 @@
-﻿
-@{
-    ViewBag.Title = "QuarterbackYards";
-}
-
-@{
-    ViewBag.Title = "NFL Data";
+﻿@{
+    ViewBag.Title = "NFL Quarterback Yards";
     @model IEnumerable<NFLData.Models.YardageModel>
 }
-
+<h3>NFL 2016 Regular Season Quarterback Yards</h3>
+<hr />
 @if (Model == null)
 {
     <h4>Please Enter the name of the QB you want to search for.</h4>
@@ -21,6 +17,7 @@
         </form>
         <br />
         @Html.ActionLink("All Quarterbacks Yardage","AllQBYards")
+        <br />
 }
 else if (Model != null)
 {
@@ -34,9 +31,11 @@ else if (Model != null)
             </fieldset>
         </form>
         <br />
-        @Html.ActionLink("All Quarterbacks Yardage", "AllQBYards")
+        @Html.ActionLink("All Quarterbacks Yardage(Most to Least)", "AllQBYards")
         <br />
         @Html.ActionLink("Reset Search", "QuarterbackYards")
+        <hr />
+
     <table class="table table-bordered table-striped table-responsive">
         <tr>
             <th>

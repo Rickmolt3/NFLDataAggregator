@@ -3,6 +3,8 @@
     @model IEnumerable<NFLData.Models.PlayerModel>
 }
 
+<h3>NFL 2016 Regular Season Quarterback Stats</h3>
+<hr />
 @if (Model == null)
 {
     <h4>Please Enter the name of the QB you want to search for.</h4>
@@ -14,6 +16,7 @@
             <button type="submit" class="btn btn-primary">Search</button>
         </fieldset>
     </form>
+    <br />
 
 }
 else if (Model != null)
@@ -27,6 +30,7 @@ else if (Model != null)
             <button type="submit" class="btn btn-primary">Search</button>
         </fieldset>
     </form>
+    <hr />
 
     <table class="table table-bordered table-striped table-responsive">
         <tr>
