@@ -33,6 +33,19 @@ namespace NFLData.Controllers
             return View(pm);
         }
 
+        //grabs all quarterbacks and all their stats
+        public ActionResult AllQBStats()
+        {         
+
+            DataController dc = new DataController("DefaultConnection");
+
+            List<PlayerModel> pm = dc.GetAllQbs();
+
+            //IEnumerable<PlayerModel> pma = pm.OrderByDescending(x => x.Yards);//by default the yards are sorted from highest to lowest
+
+            return View("About", pm);
+        }
+
         //standard controller for the quarterbackyards view
         public ActionResult QuarterbackYards()
         {
@@ -69,5 +82,7 @@ namespace NFLData.Controllers
 
             return View();
         }
+
+        //make a team homepage to search through all the teams and random information and then link the stadiums to google api and display it for visual
     }
 }

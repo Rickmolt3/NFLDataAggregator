@@ -118,5 +118,37 @@ namespace NFLData.Controllers.DataControllers
 
             return yardage;
         }
+
+        //gets all individual qbs and their max and average stats
+        public List<PlayerModel> GetAllQbs()
+        {
+            // Readies stored proc from server.
+            DbCommand getQB = db.GetStoredProcCommand("sp_getAllQbs");//returns the quarterback and total yardage for the season
+
+            // Executes stored proc to return values into a DataSet.
+            DataSet ds = db.ExecuteDataSet(getQB);
+
+            var stats = (from drRow in ds.Tables[0].AsEnumerable()
+                           select new PlayerModel()
+                           {
+                               Quarterback = drRow.Field<string>("Quarterback"),
+                               Attempt = drRow.Field<int>("Attempts"),
+                               Completion = drRow.Field<int>("Completions"),
+                               Yards = drRow.Field<int>("Yards"),
+                               YardsPerAttempt = drRow.Field<double>("YPAttempt"),
+                               Touchdown = drRow.Field<int>("Touchdowns"),
+                               Interception = drRow.Field<int>("Interceptions"),
+                               Long = drRow.Field<int>("Longest"),
+                               Sack = drRow.Field<int>("Sacks"),
+                               Loss = drRow.Field<int>("Loss"),
+                               Rate = drRow.Field<double>("Rate"),
+                               TotalPoints = drRow.Field<int>("TotalPoints"),
+                               //removed the homeoraway and year columns here
+
+                           }).ToList();
+
+            return stats;
+        }
+
     }
 }

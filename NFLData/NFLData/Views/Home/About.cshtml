@@ -1,5 +1,4 @@
 ﻿@{
-    ViewBag.Title = "NFL QB Stats";
     @model IEnumerable<NFLData.Models.PlayerModel>
 }
 
@@ -15,6 +14,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
         </fieldset>
+        <br />
+        @Html.ActionLink("All Quarterbacks Stats(Entire Year)", "AllQBStats")
     </form>
     <br />
 
@@ -30,13 +31,17 @@ else if (Model != null)
             <button type="submit" class="btn btn-primary">Search</button>
         </fieldset>
     </form>
+    <br />
+    @Html.ActionLink("All Quarterbacks Stats(Entire Year)", "AllQBStats")
+    <br />
+    @Html.ActionLink("Reset Search", "About")
     <hr />
 
-    <table class="table table-bordered table-striped table-responsive">
-        <tr>
-            <th>
+    <table class="table table-bordered table-striped table-responsive table-hover">
+        <tr class="info">
+            @*<th>
                 Game
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Quarterback)
             </th>
@@ -73,22 +78,22 @@ else if (Model != null)
             <th>
                 @Html.DisplayNameFor(model => model.TotalPoints)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.HomeOrAway)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Year)
-            </th>
+            </th>*@
         </tr>
 
-        @{int rowNo=0;}
+        @*@{int rowNo=0;}*@
 
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                @*<td>
                     @(rowNo+=1)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Quarterback)
                 </td>
@@ -125,12 +130,12 @@ else if (Model != null)
                 <td>
                     @Html.DisplayFor(modelItem => item.TotalPoints)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.HomeOrAway)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Year)
-                </td>
+                </td>*@
             </tr>
         }
     </table>

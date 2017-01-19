@@ -1,5 +1,4 @@
 ﻿@{
-    ViewBag.Title = "NFL Quarterback Yards";
     @model IEnumerable<NFLData.Models.YardageModel>
 }
 <h3>NFL 2016 Regular Season Quarterback Yards</h3>
@@ -36,8 +35,8 @@ else if (Model != null)
         @Html.ActionLink("Reset Search", "QuarterbackYards")
         <hr />
 
-    <table class="table table-bordered table-striped table-responsive">
-        <tr>
+    <table class="table table-bordered table-striped table-responsive table-hover" >
+        <tr class="info">
             <th>
                 @Html.DisplayNameFor(model => model.Quarterback)
             </th>

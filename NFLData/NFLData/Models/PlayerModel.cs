@@ -10,7 +10,7 @@ namespace NFLData.Models
     {
         //Model for the qb search based on user input
 
-        [DefaultValue("Search A Quarterback!")]
+        [DefaultValue("Quarterback")]
         [DisplayName("Quarterback")]
         public string Quarterback { get; set; }
 
@@ -31,7 +31,7 @@ namespace NFLData.Models
         public double YardsPerAttempt { get; set; }
 
         [DefaultValue(0)]
-        [DisplayName("Touchdown")]
+        [DisplayName("Touchdowns")]
         public int Touchdown { get; set; }
 
         [DefaultValue(0)]
@@ -51,7 +51,7 @@ namespace NFLData.Models
         public int Loss { get; set; }
 
         [DefaultValue(0)]
-        [DisplayName("QB Rate")]
+        [DisplayName("Rating")]
         public double Rate { get; set; }
 
         [DefaultValue(0)]
