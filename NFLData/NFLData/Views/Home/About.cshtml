@@ -6,14 +6,14 @@
 @if (Model == null)
 {
    <div class="">
-    <form role="form" method="post">
-        <fieldset>
-            <div class="form-group">
-                <input class="form-control" placeholder="Quarterback" name="Quarterback" type="text" autofocus>
-            </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-        </fieldset>
-    </form>
+        <form role="form" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Quarterback" name="Quarterback" type="text" autofocus>
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </fieldset>
+        </form>
    </div>
 }
 else if (Model != null)
@@ -28,7 +28,7 @@ else if (Model != null)
             </fieldset>
         </form>
     </div>
-    <table class="table">
+    <table class="table table-bordered table-striped table-responsive">
         <tr>
             <th>
                 Game
@@ -75,7 +75,6 @@ else if (Model != null)
             <th>
                 @Html.DisplayNameFor(model => model.Year)
             </th>
-            <th></th>
         </tr>
 
         @{int rowNo=0;}

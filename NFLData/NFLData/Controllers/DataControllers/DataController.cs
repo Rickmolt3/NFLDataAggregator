@@ -74,5 +74,49 @@ namespace NFLData.Controllers.DataControllers
 
             return player;
         }
+
+        //takes a inputed qb and returns all his yards for the 2016 season
+        public List<YardageModel> GetYardage(string Quarterback)
+        {
+            // Readies stored proc from server.
+            DbCommand getQB = db.GetStoredProcCommand("sp_getYardage");//returns the quarterback and total yardage for the season
+
+            db.AddInParameter(getQB, "@Quarterback", DbType.String, Quarterback);
+
+            // Executes stored proc to return values into a DataSet.
+            DataSet ds = db.ExecuteDataSet(getQB);
+
+            var yardage = (from drRow in ds.Tables[0].AsEnumerable()
+                          select new YardageModel()
+                          {
+
+                              Quarterback = drRow.Field<string>("Quarterback"),
+                              Yards = drRow.Field<int>("Yards")
+                              
+                          }).ToList();
+
+            return yardage;
+        }
+
+        //gets all yardage for all the qbs and populates the yardage model 
+        public List<YardageModel> GetAllYardage()
+        {
+            // Readies stored proc from server.
+            DbCommand getQB = db.GetStoredProcCommand("sp_getAllYardage");//returns the quarterback and total yardage for the season
+
+            // Executes stored proc to return values into a DataSet.
+            DataSet ds = db.ExecuteDataSet(getQB);
+
+            var yardage = (from drRow in ds.Tables[0].AsEnumerable()
+                           select new YardageModel()
+                           {
+
+                               Quarterback = drRow.Field<string>("Quarterback"),
+                               Yards = drRow.Field<int>("Yards")
+
+                           }).ToList();
+
+            return yardage;
+        }
     }
 }

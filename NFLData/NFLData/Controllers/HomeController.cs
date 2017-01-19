@@ -33,10 +33,37 @@ namespace NFLData.Controllers
             return View(pm);
         }
 
-        //useless
+        //standard controller for the quarterbackyards view
+        public ActionResult QuarterbackYards()
+        {
+            return View();
+        }      
+
+        //gets a quarterbacks yards and displays it based on their name
+        [HttpPost]
+        public ActionResult QuarterbackYards(string Quarterback)
+        {
+            DataController dc = new DataController("DefaultConnection");
+
+            List<YardageModel> pm = dc.GetYardage(Quarterback);
+
+            return View(pm);
+        }
+
+        //gets all qbs and their yardage and returns it to the QuarterbackYards view
+        public ActionResult AllQBYards()
+        {
+            DataController dc = new DataController("DefaultConnection");
+
+            List<YardageModel> pm = dc.GetAllYardage();
+
+            return View("QuarterbackYards", pm);
+        }
+
+        //contact page
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "My Contact Information";
 
             return View();
         }

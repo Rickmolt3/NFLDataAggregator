@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "QuarterbackYards";
+}
+
+@{
+    ViewBag.Title = "NFL Data";
+    @model IEnumerable<NFLData.Models.YardageModel>
+}
+
+@if (Model == null)
+{
+    <div class="">
+        <form role="form" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Quarterback" name="Quarterback" type="text" autofocus>
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </fieldset>
+        </form>
+        @Html.ActionLink("All Quarterbacks Yardage","AllQBYards")
+        @Html.ActionLink("Reset Search", "QuarterbackYards")
+    </div>
+}
+else if (Model != null)
+{
+    <div class="">
+        <form role="form" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Quarterback" name="Quarterback" type="text" autofocus>
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </fieldset>
+        </form>
+        @Html.ActionLink("All Quarterbacks Yardage", "AllQBYards")
+        @Html.ActionLink("Reset Search", "QuarterbackYards")
+    </div>
+    <table class="table table-bordered table-striped table-responsive">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Quarterback)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yards)
+            </th>          
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quarterback)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yards)
+                </td>              
+            </tr>
+        }
+    </table>
+}
+
+
