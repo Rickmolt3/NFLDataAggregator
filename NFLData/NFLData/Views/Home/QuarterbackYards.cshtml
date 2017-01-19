@@ -10,7 +10,7 @@
 
 @if (Model == null)
 {
-    <div class="">
+    <h4>Please Enter the name of the QB you want to search for.</h4>
         <form role="form" method="post">
             <fieldset>
                 <div class="form-group">
@@ -19,13 +19,12 @@
                 <button type="submit" class="btn btn-primary">Search</button>
             </fieldset>
         </form>
+        <br />
         @Html.ActionLink("All Quarterbacks Yardage","AllQBYards")
-        @Html.ActionLink("Reset Search", "QuarterbackYards")
-    </div>
 }
 else if (Model != null)
 {
-    <div class="">
+    <h4>Please Enter the name of the QB you want to search for.</h4>
         <form role="form" method="post">
             <fieldset>
                 <div class="form-group">
@@ -34,9 +33,10 @@ else if (Model != null)
                 <button type="submit" class="btn btn-primary">Search</button>
             </fieldset>
         </form>
+        <br />
         @Html.ActionLink("All Quarterbacks Yardage", "AllQBYards")
+        <br />
         @Html.ActionLink("Reset Search", "QuarterbackYards")
-    </div>
     <table class="table table-bordered table-striped table-responsive">
         <tr>
             <th>
