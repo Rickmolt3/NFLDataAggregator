@@ -57,7 +57,9 @@ namespace NFLData.Controllers
 
             List<YardageModel> pm = dc.GetAllYardage();
 
-            return View("QuarterbackYards", pm);
+            IEnumerable<YardageModel> pma = pm.OrderByDescending(x => x.Yards);
+
+            return View("QuarterbackYards", pma);
         }
 
         //contact page
