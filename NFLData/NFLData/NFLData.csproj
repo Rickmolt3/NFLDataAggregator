@@ -162,6 +162,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\PlayerModel.cs" />
+    <Compile Include="Models\TeamModel.cs" />
     <Compile Include="Models\YardageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -215,6 +216,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\QuarterbackYards.cshtml" />
+    <Content Include="Views\Home\Teams.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
