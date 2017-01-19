@@ -1,7 +1,73 @@
 ﻿@{
     ViewBag.Title = "Teams";
     @model IEnumerable<NFLData.Models.TeamModel>
+
 }
 
 @*display the teams and squares with infomration like their picture, name, location, and other stuff*@
 
+<h3>NFL Teams</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2>Hover me</h2>
+                    <p>I will show the footer panel with a Badge</p>
+                </div>
+                <div class="panel-footer"><a href="#"><span class="badge">42</span></a></div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2>Hover me</h2>
+                    <p>I will show the footer panel with a Badge</p>
+                </div>
+                <div class="panel-footer"><a href="#"><span class="badge">42</span></a></div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2>Hover me</h2>
+                    <p>I will show the footer panel with a Badge</p>
+                </div>
+                <div class="panel-footer"><a href="#"><span class="badge">42</span></a></div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2>Hover me</h2>
+                    <p>I will show the footer panel with a Badge</p>
+                </div>
+                <div class="panel-footer"><a href="#"><span class="badge">42</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*.panel-default{
+    text-align:center;
+    cursor:pointer;
+    font-family: 'Raleway',sans-serif;
+}
+.panel-default > .panel-footer {
+    color: #fff;
+    background-color: #47c8ed;
+    display:none;
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+}
+.panel-default i{
+    font-size: 5em;
+    }*@
+
+$(function(){
+$('.panel').hover(function(){
+        $(this).find('.panel-footer').slideDown(250);
+    },function(){
+        $(this).find('.panel-footer').slideUp(250); //.fadeOut(205)
+    });
+})

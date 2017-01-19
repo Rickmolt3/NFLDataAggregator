@@ -75,6 +75,7 @@ namespace NFLData.Controllers
             return View("QuarterbackYards", pma);
         }
 
+        //shows all the nfl teams in a nice front end ish display
         public ActionResult Teams()
         {
             return View();
@@ -88,6 +89,5 @@ namespace NFLData.Controllers
             return View();
         }
 
-        //make a team homepage to search through all the teams and random information and then link the stadiums to google api and display it for visual recognition
     }
 }
