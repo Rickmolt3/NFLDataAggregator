@@ -22,3 +22,18 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.panel-default{
+    text-align:center;
+    cursor:pointer;
+    font-family: 'Raleway',sans-serif;
+}
+.panel-default > .panel-footer {
+    color: #fff;
+    background-color: #47c8ed;
+    display:none;
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+}
+.panel-default i{
+    font-size: 5em;
+    }
