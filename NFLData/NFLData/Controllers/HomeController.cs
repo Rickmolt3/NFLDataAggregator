@@ -10,13 +10,13 @@ namespace NFLData.Controllers
 {
     public class HomeController : Controller
     {
-        //useless start page left index alone
+        //The home for the application an introduction and information will be there
         public ActionResult Index()
         {
             return View();
         }
 
-        //this about is where I stored the code for the data pull
+        //Contains the quarterback stat lookup
         public ActionResult About()
         {
             return View();
@@ -78,6 +78,14 @@ namespace NFLData.Controllers
         //shows all the nfl teams in a nice front end ish display
         public ActionResult Teams()
         {
+            return View();
+        }
+
+        //takes the selected team from the teams view and then displays all pertinent information
+        public ActionResult TeamChoice(string name)
+        {
+            ViewBag.thingy = name;
+            //here is where i reference a data controller that brings back all the information on the selected teem and displays it
             return View();
         }
 
