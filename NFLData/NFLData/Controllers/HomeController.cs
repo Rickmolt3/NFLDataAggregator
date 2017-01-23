@@ -82,11 +82,16 @@ namespace NFLData.Controllers
         }
 
         //takes the selected team from the teams view and then displays all pertinent information
-        public ActionResult TeamChoice(string name)
+        public ActionResult TeamChoice(string name, string picture)
         {
-            ViewBag.thingy = name;
-            //here is where i reference a data controller that brings back all the information on the selected teem and displays it
-            return View();
+            //takes the image from the team selection and passes it through to the display page using viewbag
+            ViewBag.Logo = string.Format("/Images/{0}", picture);
+   
+            DataController dc = new DataController("DefaultConnection");
+
+            TeamModel tm = dc.GetTeam(name);
+            
+            return View(tm);
         }
 
         //contact page

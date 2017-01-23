@@ -150,5 +150,34 @@ namespace NFLData.Controllers.DataControllers
             return stats;
         }
 
+        //gets the selected team and then proceeds to display all the info from the database
+        public TeamModel GetTeam(string name)
+        {
+            // Readies stored proc from server.
+            DbCommand getTeam = db.GetStoredProcCommand("sp_GetTeam");//returns the quarterback and total yardage for the season
+
+            //adds a parameter
+            db.AddInParameter(getTeam, "@TeamName", DbType.String, name);
+
+            // Executes stored proc to return values into a DataSet.
+            DataSet ds = db.ExecuteDataSet(getTeam);
+
+            DataRow dr = ds.Tables[0].Rows[0];
+
+            TeamModel team = new TeamModel()
+            {
+                TeamName = dr.Field<string>("TeamName"),
+                TeamCity = dr.Field<string>("TeamCity"),
+                TeamDivision = dr.Field<string>("TeamDivision"),
+                TeamHeadCoach = dr.Field<string>("TeamHeadCoach"),
+                TeamStadium = dr.Field<string>("TeamStadium"),
+                TeamStadiumCapacity = dr.Field<int>("TeamStadiumCapacity"),
+                Latitude = dr.Field<decimal>("Latitude"),
+                Longitude = dr.Field<decimal>("Longitude"),
+            };
+
+            return team;
+        }
+
     }
 }

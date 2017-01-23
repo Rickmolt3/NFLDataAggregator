@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel;
 
 namespace NFLData.Models
 {
@@ -9,24 +10,32 @@ namespace NFLData.Models
     {
         //this model is for the seperate nfl teams to display various information about them
 
-        //add default values and display names for all the properties
+        [DefaultValue("Team")]
         public string TeamName { get; set; }
 
-        public string TeamLocation { get; set; }
+        [DefaultValue("Atlanta")]
+        public string TeamCity { get; set; }
 
-        public string Division { get; set; }
+        [DefaultValue("Some Division")]
+        public string TeamDivision { get; set; }
 
-        public string Stadium { get; set; }
+        [DefaultValue("Stadium")]
+        public string TeamStadium { get; set; }
 
-        //public double StadiumCoordinates { get; set; } wait until I can properly store coord data and recall it
+        //add picture for teams here eventually
 
-        public string StadiumCapacity { get; set; }
+        [DefaultValue(0)]
+        public int TeamStadiumCapacity { get; set; }
 
+        [DefaultValue("A Guy")]
         public string TeamHeadCoach { get; set; }
 
-        //eventual once i work it out team image
+        [DefaultValue(0)]
+        public decimal Latitude { get; set; }
 
-        //add more team infomation here, use the wikipedia page
+        [DefaultValue(0)]
+        public decimal Longitude { get; set; }
+
 
 
     }

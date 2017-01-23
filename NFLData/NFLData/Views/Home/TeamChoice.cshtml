@@ -5,9 +5,6 @@
     @model NFLData.Models.TeamModel
 }
 
-<h2>TeamChoice</h2>
-@ViewBag.thingy
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,13 +17,26 @@
 </head>
 <body>
     <h3>My Google Maps Demo</h3>
+    @Model.TeamName
+    <br />
+    @Model.TeamCity
+    <br />
+    @Model.TeamDivision
+    <br />
+    @Model.TeamHeadCoach
+    <br />
+    @Model.TeamStadium
+    <br />
+    @Model.TeamStadiumCapacity
+    <br />
+    <img src="@ViewBag.Logo" />
     <div id="map"></div>
     <script>
       function initMap() {
-          var uluru = { lat: 32.747778, lng: -97.092778 };
-          @*var uluru = @Model.StadiumGeo*@
+          //var uluru = { lat: 32.747778, lng: -97.092778 }; this is the dallas stadium coordinates
+          var uluru = {lat: @Model.Latitude , lng: @Model.Longitude};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
+          zoom: 14,
           center: uluru
         });
         var marker = new google.maps.Marker({

@@ -187,7 +187,39 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\arizona-cardinals-logo.png" />
+    <Content Include="Images\atlanta-falcons-logo.png" />
+    <Content Include="Images\baltimore-ravens-logo.png" />
+    <Content Include="Images\buffalo-bills-logo.png" />
+    <Content Include="Images\carolina-panthers-logo.png" />
+    <Content Include="Images\chicago-bears-logo.png" />
+    <Content Include="Images\cincinnati-bengals-logo.png" />
+    <Content Include="Images\cleveland-browns-logo.png" />
+    <Content Include="Images\dallas-cowboys-logo.png" />
+    <Content Include="Images\denver-broncos-logo.png" />
+    <Content Include="Images\detroit-lions-logo.png" />
+    <Content Include="Images\green-bay-packers-logo.png" />
+    <Content Include="Images\houston-texans-logo.png" />
+    <Content Include="Images\indianapolis-colts-logo.png" />
+    <Content Include="Images\jacksonville-jaguars-logo.png" />
+    <Content Include="Images\kansas-city-chiefs-logo.png" />
     <Content Include="Images\landingimage.jpg" />
+    <Content Include="Images\los-angeles-chargers-logo.png" />
+    <Content Include="Images\miami-dolphins-logo.png" />
+    <Content Include="Images\minnesota-vikings-logo.png" />
+    <Content Include="Images\new-england-patriots-logo.png" />
+    <Content Include="Images\new-orleans-saints-logo.png" />
+    <Content Include="Images\new-york-giants-logo.png" />
+    <Content Include="Images\new-york-jets-logo.png" />
+    <Content Include="Images\oakland-raiders-logo.png" />
+    <Content Include="Images\philadelphia-eagles-logo.png" />
+    <Content Include="Images\pittsburgh-steelers-logo.png" />
+    <Content Include="Images\san-francisco-49ers-logo.png" />
+    <Content Include="Images\seattle-seahawks-logo.png" />
+    <Content Include="Images\st-louis-rams-logo.png" />
+    <Content Include="Images\tampa-bay-buccaneers-logo.png" />
+    <Content Include="Images\tennessee-titans-logo.png" />
+    <Content Include="Images\washington-redskins-logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -218,6 +250,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\QuarterbackYards.cshtml" />
     <Content Include="Views\Home\Teams.cshtml" />
+    <Content Include="Views\Home\TeamChoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
