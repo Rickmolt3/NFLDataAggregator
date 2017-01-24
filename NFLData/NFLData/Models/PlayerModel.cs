@@ -28,7 +28,7 @@ namespace NFLData.Models
 
         [DefaultValue(0)]
         [DisplayName("Yards Per Attempt")]
-        public double YardsPerAttempt { get; set; }
+        public decimal YardsPerAttempt { get; set; }
 
         [DefaultValue(0)]
         [DisplayName("Touchdowns")]
@@ -52,7 +52,7 @@ namespace NFLData.Models
 
         [DefaultValue(0)]
         [DisplayName("Rating")]
-        public double Rate { get; set; }
+        public decimal Rate { get; set; }
 
         [DefaultValue(0)]
         [DisplayName("Total Points")]
