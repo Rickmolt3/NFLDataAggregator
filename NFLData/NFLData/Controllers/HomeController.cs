@@ -78,7 +78,7 @@ namespace NFLData.Controllers
         //shows all the nfl teams in a nice front end ish display
         public ActionResult Teams()
         {
-            return View();
+            return View("Teams");
         }
 
         //takes the selected team from the teams view and then displays all pertinent information
