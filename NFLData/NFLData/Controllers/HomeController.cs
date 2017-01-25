@@ -78,14 +78,14 @@ namespace NFLData.Controllers
         //shows all the nfl teams in a nice front end ish display
         public ActionResult Teams()
         {
-            return View("Teams");
+            return View();
         }
 
         //takes the selected team from the teams view and then displays all pertinent information
         public ActionResult TeamChoice(string name, string picture)
         {
             //takes the image from the team selection and passes it through to the display page using viewbag
-            ViewBag.Logo = string.Format("/Images/{0}", picture);
+            ViewBag.Logo = string.Format("/FixedImages/{0}", picture);
    
             DataController dc = new DataController("DefaultConnection");
 
