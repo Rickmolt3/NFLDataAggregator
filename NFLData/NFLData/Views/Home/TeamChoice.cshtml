@@ -9,42 +9,65 @@
 <head>
     <style>
         #map {
-            height: 200px;
+            height: 300px;
             width: 100%;
         }
     </style>
 </head>
 <body>
-    @Html.DisplayNameFor(modelItem => Model.TeamName)
     <br />
-    @Model.TeamName
-    <br />
-    @Html.DisplayNameFor(modelItem => Model.TeamCity)
-    <br />
-    @Model.TeamCity
-    <br />
-    @Html.DisplayNameFor(modelItem => Model.TeamDivision)
-    <br />
-    @Model.TeamDivision
-    <br />
-    @Html.DisplayNameFor(modelItem => Model.TeamHeadCoach)
-    <br />
-    @Model.TeamHeadCoach
-    <br />
-    @Html.DisplayNameFor(modelItem => Model.TeamStadium)
-    <br />
-    @Model.TeamStadium
-    <br />
-    @Html.DisplayNameFor(modelItem => Model.TeamStadiumCapacity)
-    <br />
-    @Model.TeamStadiumCapacity
-    <br />
-    <img src="@ViewBag.Logo" />
+    <div class="container">
+
+        <div class="col-lg-4">
+
+            <img src="@ViewBag.Logo" class="img-responsive" />
+            <h1>@Model.TeamName</h1>
+
+        </div>
+
+        <div class="col-lg-4">
+            <br />
+            <b>@Html.DisplayNameFor(modelItem => Model.TeamName)</b>
+            <br />
+            <a href="https://en.wikipedia.org/wiki/@Model.TeamName">@Model.TeamName</a>
+            <br />
+            <b>@Html.DisplayNameFor(modelItem => Model.TeamCity)</b>
+            <br />
+            <a href="https://en.wikipedia.org/wiki/@Model.TeamCity">@Model.TeamCity</a>
+            <br />
+            <b>@Html.DisplayNameFor(modelItem => Model.TeamDivision)</b>
+            <br />
+            <a href="https://en.wikipedia.org/wiki/@Model.TeamDivision">@Model.TeamDivision</a>
+
+        </div>
+
+        <div class="col-lg-4">
+            <br />
+            <b>@Html.DisplayNameFor(modelItem => Model.TeamHeadCoach)</b>
+            <br />
+            <a href="https://en.wikipedia.org/wiki/@Model.TeamHeadCoach">@Model.TeamHeadCoach</a>
+            <br />
+            <b>@Html.DisplayNameFor(modelItem => Model.TeamStadium)</b>
+            <br />
+            <a href="https://en.wikipedia.org/wiki/@Model.TeamStadium">@Model.TeamStadium</a>
+            <br />
+            <b>@Html.DisplayNameFor(modelItem => Model.TeamStadiumCapacity)</b>
+            <br />
+            @Model.TeamStadiumCapacity
+            <br />
+            <b>Stadium Latitude/Longitude:</b> 
+            <br />
+            @Model.Latitude/@Model.Longitude
+
+         </div>
+
+    </div>
+
     <hr />
+
     <div id="map"></div>
     <script>
       function initMap() {
-        //var uluru = { lat: 32.747778, lng: -97.092778 }; this is the dallas stadium coordinates
         var uluru = {lat: @Model.Latitude , lng: @Model.Longitude};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,

@@ -49,7 +49,7 @@ namespace NFLData.Controllers
         //standard controller for the quarterbackyards view
         public ActionResult QuarterbackYards()
         {
-            return View();
+            return View("QuarterbackYards");
         }      
 
         //gets a quarterbacks yards and displays it based on their name
