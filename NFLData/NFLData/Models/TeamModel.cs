@@ -11,23 +11,27 @@ namespace NFLData.Models
         //this model is for the seperate nfl teams to display various information about them
 
         [DefaultValue("Team")]
+        [DisplayName("Team:")]
         public string TeamName { get; set; }
 
         [DefaultValue("Atlanta")]
+        [DisplayName("City:")]
         public string TeamCity { get; set; }
 
         [DefaultValue("Some Division")]
+        [DisplayName("Division:")]
         public string TeamDivision { get; set; }
 
         [DefaultValue("Stadium")]
+        [DisplayName("Stadium:")]
         public string TeamStadium { get; set; }
 
-        //add picture for teams here eventually
-
         [DefaultValue(0)]
+        [DisplayName("Stadium Capacity:")]
         public int TeamStadiumCapacity { get; set; }
 
         [DefaultValue("A Guy")]
+        [DisplayName("Head Coach:")]
         public string TeamHeadCoach { get; set; }
 
         [DefaultValue(0)]

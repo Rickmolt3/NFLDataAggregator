@@ -1,6 +1,5 @@
-﻿
-@{
-    ViewBag.Title = "TeamChoice";
+﻿@{
+    ViewBag.Title = "ChosenTeam";
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
     @model NFLData.Models.TeamModel
 }
@@ -16,25 +15,37 @@
     </style>
 </head>
 <body>
-    <h3>My Google Maps Demo</h3>
+    @Html.DisplayNameFor(modelItem => Model.TeamName)
+    <br />
     @Model.TeamName
+    <br />
+    @Html.DisplayNameFor(modelItem => Model.TeamCity)
     <br />
     @Model.TeamCity
     <br />
+    @Html.DisplayNameFor(modelItem => Model.TeamDivision)
+    <br />
     @Model.TeamDivision
+    <br />
+    @Html.DisplayNameFor(modelItem => Model.TeamHeadCoach)
     <br />
     @Model.TeamHeadCoach
     <br />
+    @Html.DisplayNameFor(modelItem => Model.TeamStadium)
+    <br />
     @Model.TeamStadium
+    <br />
+    @Html.DisplayNameFor(modelItem => Model.TeamStadiumCapacity)
     <br />
     @Model.TeamStadiumCapacity
     <br />
     <img src="@ViewBag.Logo" />
+    <hr />
     <div id="map"></div>
     <script>
       function initMap() {
-          //var uluru = { lat: 32.747778, lng: -97.092778 }; this is the dallas stadium coordinates
-          var uluru = {lat: @Model.Latitude , lng: @Model.Longitude};
+        //var uluru = { lat: 32.747778, lng: -97.092778 }; this is the dallas stadium coordinates
+        var uluru = {lat: @Model.Latitude , lng: @Model.Longitude};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
           center: uluru
