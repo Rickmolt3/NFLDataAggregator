@@ -78,7 +78,7 @@ namespace NFLData.Controllers
         //shows all the nfl teams in a nice front end ish display
         public ActionResult Teams()
         {
-            return View();
+            return View("Teams");
         }
 
         //takes the selected team from the teams view and then displays all pertinent information
@@ -103,6 +103,18 @@ namespace NFLData.Controllers
             List<SuperBowl> sb = dc.GetSuperBowl();
 
             return View(sb);
+        }
+
+        //gets the rushing yards for all the rushing players for the 2016 season
+        public ActionResult Rushing()
+        {
+            return null;
+        }
+
+        //gets the recieving yards for all the recieving players for the 2016 season
+        public ActionResult Recieving()
+        {
+            return null;
         }
 
         //contact page
