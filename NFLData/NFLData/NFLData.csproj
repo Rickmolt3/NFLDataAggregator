@@ -162,6 +162,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\PlayerModel.cs" />
+    <Compile Include="Models\Recieving.cs" />
+    <Compile Include="Models\Rushing.cs" />
     <Compile Include="Models\SuperBowl.cs" />
     <Compile Include="Models\TeamModel.cs" />
     <Compile Include="Models\YardageModel.cs" />
@@ -253,6 +255,8 @@
     <Content Include="Views\Home\Teams.cshtml" />
     <Content Include="Views\Home\TeamChoice.cshtml" />
     <Content Include="Views\Home\SuperBowl.cshtml" />
+    <Content Include="Views\Home\Recieving.cshtml" />
+    <Content Include="Views\Home\Rushing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -26,56 +26,58 @@ namespace NFLData.Models
         [DisplayName("Games")]
         public string Games { get; set; }
 
-        [DisplayName("Games Started")]
+        [DisplayName("Played")]
         public string GamesStarted { get; set; }
 
-        [DisplayName("RushAttempts")]
+        [DisplayName("Attempts")]
         public string RushAttempts { get; set; }
 
-        [DisplayName("RushYds")]
+        [DisplayName("Yards")]
         public string RushYds { get; set; }
 
         [DisplayName("RushTD")]
         public string RushTD { get; set; }
 
-        [DisplayName("RushLng")]
+        [DisplayName("Long")]
         public string RushLng { get; set; }
 
-        [DisplayName("RushYardsAttempt")]
+        [DisplayName("PerAtt")]
         public string RushYA { get; set; }
 
-        [DisplayName("RushYG")]
+        [DisplayName("RushY/G")]
         public string RushYG { get; set; }
 
-        [DisplayName("RushAG")]
+        [DisplayName("RushA/G")]
         public string RushAG { get; set; }
 
-        [DisplayName("RecTargets")]
-        public string RecTargets { get; set; }
+        //decide what to do with these properties in the data base seeing as the model is too bloated
 
-        [DisplayName("Rec")]
-        public string Rec { get; set; }
+        //[DisplayName("RecTargets")]
+        //public string RecTargets { get; set; }
 
-        [DisplayName("RecYds")]
-        public string RecYds { get; set; }
+        //[DisplayName("Rec")]
+        //public string Rec { get; set; }
 
-        [DisplayName("RedYR")]
-        public string RecYR { get; set; }
+        //[DisplayName("RecYds")]
+        //public string RecYds { get; set; }
 
-        [DisplayName("RedTD")]
-        public string RecTD { get; set; }
+        //[DisplayName("RedYR")]
+        //public string RecYR { get; set; }
 
-        [DisplayName("RecLng")]
-        public string RecLng { get; set; }
+        //[DisplayName("RedTD")]
+        //public string RecTD { get; set; }
 
-        [DisplayName("RecRG")]
-        public string RecRG { get; set; }
+        //[DisplayName("RecLng")]
+        //public string RecLng { get; set; }
 
-        [DisplayName("RecYG")]
-        public string RecYG { get; set; }
+        //[DisplayName("RecRG")]
+        //public string RecRG { get; set; }
 
-        [DisplayName("Catch%")]
-        public string CatchPercentage { get; set; }
+        //[DisplayName("RecYG")]
+        //public string RecYG { get; set; }
+
+        //[DisplayName("Catch%")]
+        //public string CatchPercentage { get; set; }
 
         [DisplayName("ScrimageYds")]
         public string ScrimageYds { get; set; }

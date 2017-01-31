@@ -108,16 +108,24 @@ namespace NFLData.Controllers
         //gets the rushing yards for all the rushing players for the 2016 season
         public ActionResult Rushing()
         {
-            return null;
+            DataController dc = new DataController("DefaultConnection");
+
+            List<Rushing> sb = dc.GetRushing();
+
+            return View(sb);
         }
 
         //gets the recieving yards for all the recieving players for the 2016 season
         public ActionResult Recieving()
         {
-            return null;
+            DataController dc = new DataController("DefaultConnection");
+
+            List<Recieving> sb = dc.GetRecieving();
+
+            return View(sb);
         }
 
-        //contact page
+        //Contact page for my information and to take up blank space 
         public ActionResult Contact()
         {
             ViewBag.Message = "My Contact Information";
