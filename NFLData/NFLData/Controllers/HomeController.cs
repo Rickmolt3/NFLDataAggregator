@@ -10,21 +10,21 @@ namespace NFLData.Controllers
 {
     public class HomeController : Controller
     {
-        //The home for the application an introduction and information will be there
+        //This is the entry point for the application Home/Index
         public ActionResult Index()
         {
             return View();
         }
 
         //Contains the quarterback stat lookup
-        public ActionResult About()
+        public ActionResult Quarterback()
         {
             return View();
         }
 
         //takes the form input and passes it to the data controller
         [HttpPost]
-        public ActionResult About(string Quarterback)
+        public ActionResult Quarterback(string Quarterback)
         {
             DataController dc = new DataController("DefaultConnection");
 
@@ -43,7 +43,7 @@ namespace NFLData.Controllers
 
             //IEnumerable<PlayerModel> pma = pm.OrderByDescending(x => x.Yards);//by default the yards are sorted from highest to lowest
 
-            return View("About", pm);
+            return View("Quarterback", pm);
         }
 
         //standard controller for the quarterbackyards view
