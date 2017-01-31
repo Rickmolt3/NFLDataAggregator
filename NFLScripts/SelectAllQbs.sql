@@ -1,6 +1,12 @@
 USE NFLDB
 GO
-ALTER PROCEDURE dbo.sp_getAllQbs
+-- =============================================
+-- Author:		Bailey Strum
+-- Create date: 1/31/2017
+-- Description:	Gets all quarterback data and performs calculations on all data columns
+
+-- =============================================
+CREATE PROCEDURE dbo.sp_getAllQbs
 	
 AS
 SELECT DISTINCT Quarterback, 

@@ -1,10 +1,16 @@
 USE NFLDB
 GO
+-- =============================================
+-- Author:		Bailey Strum
+-- Create date: 1/31/2017
+-- Description:	gets all the rushing data for each row
+
+-- =============================================
 CREATE PROCEDURE dbo.sp_getRushing
 	
 AS
 SELECT [Rank],
-		Name,
+		[Name],
 		Team,
 		Age,
 		Position,

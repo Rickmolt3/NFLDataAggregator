@@ -1,5 +1,12 @@
 USE NFLDB
 
+-- =============================================
+-- Author:		Bailey Strum
+-- Create date: 1/31/2017
+-- Description: Inserts data into the teams columns and populates it
+
+-- =============================================
+
 --afc east
 INSERT INTO Teams
 VALUES('Buffalo Bills','Orchard Park, NY','AFC East','New Era Field',71608,'Sean McDermott',42.744,-78.787)

@@ -1,6 +1,12 @@
 USE NFLDB
 GO
-ALTER PROCEDURE dbo.sp_getRecieving
+-- =============================================
+-- Author:		Bailey Strum
+-- Create date: 1/31/2017
+-- Description:	gets all the recieving yards for each row and columns
+
+-- =============================================
+CREATE PROCEDURE dbo.sp_getRecieving
 	
 AS
 SELECT 

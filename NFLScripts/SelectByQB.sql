@@ -1,6 +1,12 @@
 USE NFLDB
 GO
-ALTER  PROCEDURE dbo.sp_getQB
+-- =============================================
+-- Author:		Bailey Strum
+-- Create date: 1/31/2017
+-- Description:	Gets a quarterback based on their name and returns all the db info
+
+-- =============================================
+CREATE PROCEDURE dbo.sp_getQB
 	@Quarterback NVARCHAR(100)
 AS
 SELECT 
