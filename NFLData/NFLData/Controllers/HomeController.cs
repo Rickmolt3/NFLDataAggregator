@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using NFLData.Controllers.DataControllers;
 using NFLData.Models;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace NFLData.Controllers
 {
@@ -129,6 +132,12 @@ namespace NFLData.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "My Contact Information";
+            
+            //add api request string here
+            //put the retured data into github model
+            //send the model to the view
+            //add the model to the view in the top
+            //add the @model.name etc to display the information
 
             return View();
         }

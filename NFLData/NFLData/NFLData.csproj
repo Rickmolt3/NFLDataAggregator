@@ -161,6 +161,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GitHubModel.cs" />
     <Compile Include="Models\PlayerModel.cs" />
     <Compile Include="Models\Recieving.cs" />
     <Compile Include="Models\Rushing.cs" />
