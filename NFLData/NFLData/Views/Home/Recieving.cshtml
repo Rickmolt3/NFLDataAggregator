@@ -1,0 +1,109 @@
+﻿@model IEnumerable<NFLData.Models.Recieving>
+
+@{
+    ViewBag.Title = "Recieving";
+}
+
+<h2 class="text-center">Recieving</h2>
+<hr />
+
+<table class="table table-bordered table-striped table-responsive table-hover">
+    <tr class="info">
+        <th>
+            @Html.DisplayNameFor(model => model.Rank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Team)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Receptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Targets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yards)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Average)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TwentyPlus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YardsAGame)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fumble)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YardsAfterCatch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstDowns)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Player)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Team)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Receptions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Targets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yards)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Average)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TwentyPlus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YardsAGame)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fumble)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YardsAfterCatch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstDowns)
+        </td>
+    </tr>
+}
+
+</table>

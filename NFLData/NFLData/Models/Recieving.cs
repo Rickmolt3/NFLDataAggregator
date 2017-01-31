@@ -9,7 +9,7 @@ namespace NFLData.Models
     public class Recieving
     {
         [DisplayName("Rank")]
-        public decimal Rank { get; set; }
+        public int Rank { get; set; }
 
         [DisplayName("Name")]
         public string Player { get; set; }
@@ -21,36 +21,36 @@ namespace NFLData.Models
         public string Team { get; set; }
 
         [DisplayName("Receptions")]
-        public decimal Receptions { get; set; }
+        public int Receptions { get; set; }
 
         [DisplayName("Targets")]
-        public decimal Targets { get; set; }
+        public int Targets { get; set; }
 
         [DisplayName("Yards")]
-        public decimal Yards { get; set; }
+        public int Yards { get; set; }
 
         [DisplayName("Average")]
-        public decimal Average { get; set; }
+        public int Average { get; set; }
 
         [DisplayName("TD's")]
-        public decimal TD { get; set; }
+        public int TD { get; set; }
 
         [DisplayName("Long")]
-        public decimal LONG { get; set; }
+        public int LONG { get; set; }
 
         [DisplayName("20+")]
-        public decimal TwentyPlus {get;set;}
+        public int TwentyPlus {get;set;}
 
         [DisplayName("YA/G")]
-        public decimal YardsAGame { get; set; }
+        public int YardsAGame { get; set; }
 
         [DisplayName("Fumble")]
-        public decimal Fumble { get; set; }
+        public int Fumble { get; set; }
 
         [DisplayName("YA/C")]
-        public decimal YardsAfterCatch { get; set; }
+        public int YardsAfterCatch { get; set; }
 
         [DisplayName("FirstDowns")]
-        public decimal FirstDowns { get; set; }
+        public int FirstDowns { get; set; }
     }
 }
