@@ -23,6 +23,11 @@
                     @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
                     <li>@Html.ActionLink("QB Stats", "About", "Home")</li>
                     <li>@Html.ActionLink("QB Yards", "QuarterbackYards", "Home")</li>
+                    @*need to reroute the two below links to appropriate controllers*@
+                    <li>@Html.ActionLink("Rushing", "Teams", "Home")</li>
+                    <li>@Html.ActionLink("Recieving", "Teams", "Home")</li>
+                    @*add proper routing below to the superbowl view once its created*@
+                    <li>@Html.ActionLink("SuperBowls", "SuperBowl", "Home")</li>
                     <li>@Html.ActionLink("Teams", "Teams", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>

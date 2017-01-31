@@ -94,6 +94,17 @@ namespace NFLData.Controllers
             return View(tm);
         }
 
+        //gets all the superbowls and displays them to the views
+        public ActionResult SuperBowl()
+        {
+
+            DataController dc = new DataController("DefaultConnection");
+
+            List<SuperBowl> sb = dc.GetSuperBowl();
+
+            return View(sb);
+        }
+
         //contact page
         public ActionResult Contact()
         {

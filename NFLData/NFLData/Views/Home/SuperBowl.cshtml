@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "SuperBowl";
+    @model IEnumerable<NFLData.Models.SuperBowl>
+}
+
+<h3>SuperBowls</h3>
+<hr />
+
+@*clean up the ui of the superbowl display*@
+<table class="table table-bordered table-striped table-responsive table-hover">
+    <tr class="info">
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.winner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.winnerpts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.loser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.loserpoints)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mvp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stadium)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.state)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.winner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.winnerpts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loserpoints)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mvp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stadium)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+        </tr>
+    }
+</table>
