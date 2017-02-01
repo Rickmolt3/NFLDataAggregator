@@ -158,6 +158,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DataControllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QuarterbackController.cs" />
+    <Compile Include="Controllers\StatsController.cs" />
+    <Compile Include="Controllers\SuperbowlController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -249,15 +253,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Quarterback.cshtml" />
+    <Content Include="Views\Quarterback\Quarterback.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\QuarterbackYards.cshtml" />
-    <Content Include="Views\Home\Teams.cshtml" />
-    <Content Include="Views\Home\TeamChoice.cshtml" />
-    <Content Include="Views\Home\SuperBowl.cshtml" />
-    <Content Include="Views\Home\Recieving.cshtml" />
-    <Content Include="Views\Home\Rushing.cshtml" />
+    <Content Include="Views\Quarterback\QuarterbackYards.cshtml" />
+    <Content Include="Views\Team\Teams.cshtml" />
+    <Content Include="Views\Team\TeamChoice.cshtml" />
+    <Content Include="Views\Superbowl\SuperBowl.cshtml" />
+    <Content Include="Views\Stats\Recieving.cshtml" />
+    <Content Include="Views\Stats\Rushing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

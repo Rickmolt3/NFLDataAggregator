@@ -1,9 +1,10 @@
 ﻿@{
     @model IEnumerable<NFLData.Models.YardageModel>
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.title = "Quarterback Yards";
 }
 
-<h2 class="text-center">NFL 2016 Regular Season Quarterback Yards</h2>
+<h2 class="text-center">2016 Regular Season Quarterback Yards</h2>
 <hr />
 @if (Model == null)
 {

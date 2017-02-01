@@ -2,6 +2,7 @@
     ViewBag.Title = "Teams";
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Tests/MyJavascript.js")"></script>
+    Layout = "~/Views/Shared/_Layout.cshtml";
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
 
 }
@@ -26,7 +27,7 @@
                 <div class="panel-body">     
                     <img class="img-responsive img-center" src="~/FixedImages/arizona-cardinals-logo.png">             
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Arizona Cardinals", "TeamChoice", "Home", new { name = "Arizona Cardinals" , picture = "arizona-cardinals-logo.png"}, new {style="color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Arizona Cardinals", "TeamChoice", "Team", new { name = "Arizona Cardinals" , picture = "arizona-cardinals-logo.png"}, new {style="color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -34,7 +35,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/atlanta-falcons-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Atlanta Falcons", "TeamChoice", "Home", new { name = "Atlanta Falcons", picture = "atlanta-falcons-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Atlanta Falcons", "TeamChoice", "Team", new { name = "Atlanta Falcons", picture = "atlanta-falcons-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>   
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -42,7 +43,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/baltimore-ravens-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Baltimore Ravens", "TeamChoice", "Home", new { name = "Baltimore Ravens", picture = "baltimore-ravens-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Baltimore Ravens", "TeamChoice", "Team", new { name = "Baltimore Ravens", picture = "baltimore-ravens-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>  
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -50,7 +51,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/buffalo-bills-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Buffalo Bills", "TeamChoice", "Home", new { name = "Buffalo Bills", picture = "buffalo-bills-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Buffalo Bills", "TeamChoice", "Team", new { name = "Buffalo Bills", picture = "buffalo-bills-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>            
     </div>
@@ -60,7 +61,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/carolina-panthers-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Carolina Panthers", "TeamChoice", "Home", new { name = "Carolina Panthers", picture = "carolina-panthers-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Carolina Panthers", "TeamChoice", "Team", new { name = "Carolina Panthers", picture = "carolina-panthers-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -68,7 +69,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/chicago-bears-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Chicago Bears", "TeamChoice", "Home", new { name = "Chicago Bears", picture = "chicago-bears-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Chicago Bears", "TeamChoice", "Team", new { name = "Chicago Bears", picture = "chicago-bears-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>  
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -76,7 +77,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/cincinnati-bengals-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Cincinnati Bengals", "TeamChoice", "Home", new { name = "Cincinnati Bengals", picture = "cincinnati-bengals-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Cincinnati Bengals", "TeamChoice", "Team", new { name = "Cincinnati Bengals", picture = "cincinnati-bengals-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>  
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -84,7 +85,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/cleveland-browns-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Cleveland Browns", "TeamChoice", "Home", new { name = "Cleveland Browns", picture = "cleveland-browns-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Cleveland Browns", "TeamChoice", "Team", new { name = "Cleveland Browns", picture = "cleveland-browns-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>   
     </div>
@@ -94,7 +95,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/dallas-cowboys-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Dallas Cowboys", "TeamChoice", "Home", new { name = "Dallas Cowboys", picture = "dallas-cowboys-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Dallas Cowboys", "TeamChoice", "Team", new { name = "Dallas Cowboys", picture = "dallas-cowboys-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -102,7 +103,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/denver-broncos-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Denver Broncos", "TeamChoice", "Home", new { name = "Denver Broncos", picture = "denver-broncos-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Denver Broncos", "TeamChoice", "Team", new { name = "Denver Broncos", picture = "denver-broncos-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -110,7 +111,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/detroit-lions-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Detroit Lions", "TeamChoice", "Home", new { name = "Detroit Lions", picture = "detroit-lions-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Detroit Lions", "TeamChoice", "Team", new { name = "Detroit Lions", picture = "detroit-lions-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -118,7 +119,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/green-bay-packers-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Green Bay Packers", "TeamChoice", "Home", new { name = "Green Bay Packers", picture = "green-bay-packers-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Green Bay Packers", "TeamChoice", "Team", new { name = "Green Bay Packers", picture = "green-bay-packers-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
     </div>
@@ -128,7 +129,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/houston-texans-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Houston Texans", "TeamChoice", "Home", new { name = "Houston Texans", picture = "houston-texans-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Houston Texans", "TeamChoice", "Team", new { name = "Houston Texans", picture = "houston-texans-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -136,7 +137,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/indianapolis-colts-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Indianapolis Colts", "TeamChoice", "Home", new { name = "Indianapolis Colts", picture = "indianapolis-colts-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Indianapolis Colts", "TeamChoice", "Team", new { name = "Indianapolis Colts", picture = "indianapolis-colts-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -144,7 +145,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/jacksonville-jaguars-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Jacksonville Jaguars", "TeamChoice", "Home", new { name = "Jacksonville Jaguars", picture = "jacksonville-jaguars-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Jacksonville Jaguars", "TeamChoice", "Team", new { name = "Jacksonville Jaguars", picture = "jacksonville-jaguars-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -152,7 +153,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/kansas-city-chiefs-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Kansas City Chiefs", "TeamChoice", "Home", new { name = "Kansas City Chiefs", picture = "kansas-city-chiefs-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Kansas City Chiefs", "TeamChoice", "Team", new { name = "Kansas City Chiefs", picture = "kansas-city-chiefs-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
     </div>
@@ -162,7 +163,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/los-angeles-chargers-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Los Angeles Chargers", "TeamChoice", "Home", new { name = "Los Angeles Chargers", picture = "los-angeles-chargers-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Los Angeles Chargers", "TeamChoice", "Team", new { name = "Los Angeles Chargers", picture = "los-angeles-chargers-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -170,7 +171,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/miami-dolphins-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Miami Dolphins", "TeamChoice", "Home", new { name = "Miami Dolphins", picture = "miami-dolphins-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Miami Dolphins", "TeamChoice", "Team", new { name = "Miami Dolphins", picture = "miami-dolphins-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -178,7 +179,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/minnesota-vikings-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Minnesota Vikings", "TeamChoice", "Home", new { name = "Minnesota Vikings", picture = "minnesota-vikings-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Minnesota Vikings", "TeamChoice", "Team", new { name = "Minnesota Vikings", picture = "minnesota-vikings-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -186,7 +187,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/new-england-patriots-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("New England Patriots", "TeamChoice", "Home", new { name = "New England Patriots", picture = "new-england-patriots-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("New England Patriots", "TeamChoice", "Team", new { name = "New England Patriots", picture = "new-england-patriots-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
     </div>
@@ -196,7 +197,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/new-orleans-saints-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("New Orleans Saints", "TeamChoice", "Home", new { name = "New Orleans Saints", picture = "new-orleans-saints-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("New Orleans Saints", "TeamChoice", "Team", new { name = "New Orleans Saints", picture = "new-orleans-saints-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -204,7 +205,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/new-york-giants-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("New York Giants", "TeamChoice", "Home", new { name = "New York Giants", picture = "new-york-giants-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("New York Giants", "TeamChoice", "Team", new { name = "New York Giants", picture = "new-york-giants-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -212,7 +213,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/new-york-jets-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("New York Jets", "TeamChoice", "Home", new { name = "New York Jets", picture = "new-york-jets-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("New York Jets", "TeamChoice", "Team", new { name = "New York Jets", picture = "new-york-jets-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -220,7 +221,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/oakland-raiders-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Oakland Raiders", "TeamChoice", "Home", new { name = "Oakland Raiders", picture = "oakland-raiders-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Oakland Raiders", "TeamChoice", "Team", new { name = "Oakland Raiders", picture = "oakland-raiders-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
     </div>
@@ -230,7 +231,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/philadelphia-eagles-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Philadelphia Eagles", "TeamChoice", "Home", new { name = "Philadelphia Eagles", picture = "philadelphia-eagles-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Philadelphia Eagles", "TeamChoice", "Team", new { name = "Philadelphia Eagles", picture = "philadelphia-eagles-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -238,7 +239,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/pittsburgh-steelers-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Pittsburgh Steelers", "TeamChoice", "Home", new { name = "Pittsburgh Steelers", picture = "pittsburgh-steelers-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Pittsburgh Steelers", "TeamChoice", "Team", new { name = "Pittsburgh Steelers", picture = "pittsburgh-steelers-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -246,7 +247,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/san-francisco-49ers-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("San Fransisco 49ers", "TeamChoice", "Home", new { name = "San Fransisco 49ers", picture = "san-francisco-49ers-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("San Fransisco 49ers", "TeamChoice", "Team", new { name = "San Fransisco 49ers", picture = "san-francisco-49ers-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -254,7 +255,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/seattle-seahawks-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Seattle Seahawks", "TeamChoice", "Home", new { name = "Seattle Seahawks", picture = "seattle-seahawks-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Seattle Seahawks", "TeamChoice", "Team", new { name = "Seattle Seahawks", picture = "seattle-seahawks-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
     </div>
@@ -264,7 +265,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/st-louis-rams-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Los Angeles Rams", "TeamChoice", "Home", new { name = "Los Angeles Rams", picture = "st-louis-rams-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Los Angeles Rams", "TeamChoice", "Team", new { name = "Los Angeles Rams", picture = "st-louis-rams-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -272,7 +273,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/tampa-bay-buccaneers-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Tampa Bay Buccaneers", "TeamChoice", "Home", new { name = "Tampa Bay Buccaneers", picture = "tampa-bay-buccaneers-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Tampa Bay Buccaneers", "TeamChoice", "Team", new { name = "Tampa Bay Buccaneers", picture = "tampa-bay-buccaneers-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -280,7 +281,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/tennessee-titans-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Tennessee Titans", "TeamChoice", "Home", new { name = "Tennessee Titans", picture = "tennessee-titans-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Tennessee Titans", "TeamChoice", "Team", new { name = "Tennessee Titans", picture = "tennessee-titans-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -288,7 +289,7 @@
                 <div class="panel-body">
                     <img class="img-responsive img-center" src="~/FixedImages/washington-redskins-logo.png">
                 </div>
-                <div class="panel-footer"><span class="badge">@Html.ActionLink("Washington Redskins", "TeamChoice", "Home", new { name = "Washington Redskins", picture = "washington-redskins-logo.png" }, new { style = "color:white" })</span></div>
+                <div class="panel-footer"><span class="badge">@Html.ActionLink("Washington Redskins", "TeamChoice", "Team", new { name = "Washington Redskins", picture = "washington-redskins-logo.png" }, new { style = "color:white" })</span></div>
             </div>
         </div>
     </div>
