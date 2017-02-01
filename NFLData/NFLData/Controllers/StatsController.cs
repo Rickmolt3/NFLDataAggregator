@@ -16,7 +16,7 @@ namespace NFLData.Controllers
         //gets the rushing yards for all the rushing players for the 2016 season
         public ActionResult Rushing()
         {
-            DataController dc = new DataController("DefaultConnection");
+            StatsDataController dc = new StatsDataController("DefaultConnection");
 
             List<Rushing> sb = dc.GetRushing();
 
@@ -26,7 +26,7 @@ namespace NFLData.Controllers
         //gets the recieving yards for all the recieving players for the 2016 season
         public ActionResult Recieving()
         {
-            DataController dc = new DataController("DefaultConnection");
+            StatsDataController dc = new StatsDataController("DefaultConnection");
 
             List<Recieving> sb = dc.GetRecieving();
 

@@ -25,7 +25,7 @@ namespace NFLData.Controllers
             //takes the image from the team selection and passes it through to the display page using viewbag
             ViewBag.Logo = string.Format("/FixedImages/{0}", picture);
 
-            DataController dc = new DataController("DefaultConnection");
+            TeamDataController dc = new TeamDataController("DefaultConnection");
 
             TeamModel tm = dc.GetTeam(name);
 

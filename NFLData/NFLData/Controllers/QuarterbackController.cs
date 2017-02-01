@@ -24,7 +24,7 @@ namespace NFLData.Controllers
         [HttpPost]
         public ActionResult Quarterback(string Quarterback)
         {
-            DataController dc = new DataController("DefaultConnection");
+            QuarterbackDataController dc = new QuarterbackDataController("DefaultConnection");
 
             List<PlayerModel> pm = dc.GetPlayer(Quarterback);
 
@@ -35,7 +35,7 @@ namespace NFLData.Controllers
         public ActionResult AllQBStats()
         {
 
-            DataController dc = new DataController("DefaultConnection");
+            QuarterbackDataController dc = new QuarterbackDataController("DefaultConnection");
 
             List<PlayerModel> pm = dc.GetAllQbs();
 
@@ -54,7 +54,7 @@ namespace NFLData.Controllers
         [HttpPost]
         public ActionResult QuarterbackYards(string Quarterback)
         {
-            DataController dc = new DataController("DefaultConnection");
+            QuarterbackDataController dc = new QuarterbackDataController("DefaultConnection");
 
             List<YardageModel> pm = dc.GetYardage(Quarterback);
 
@@ -64,7 +64,7 @@ namespace NFLData.Controllers
         //gets all qbs and their yardage and returns it to the QuarterbackYards view
         public ActionResult AllQBYards()
         {
-            DataController dc = new DataController("DefaultConnection");
+            QuarterbackDataController dc = new QuarterbackDataController("DefaultConnection");
 
             List<YardageModel> pm = dc.GetAllYardage();
 

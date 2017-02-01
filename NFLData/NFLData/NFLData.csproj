@@ -156,7 +156,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DataControllers\DataController.cs" />
+    <Compile Include="Controllers\DataControllers\QuarterbackDataController.cs" />
+    <Compile Include="Controllers\DataControllers\StatsDataController.cs" />
+    <Compile Include="Controllers\DataControllers\SuperbowlDataController.cs" />
+    <Compile Include="Controllers\DataControllers\TeamDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuarterbackController.cs" />
     <Compile Include="Controllers\StatsController.cs" />
@@ -266,6 +269,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Data\" />
+    <Folder Include="Views\TeamData\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

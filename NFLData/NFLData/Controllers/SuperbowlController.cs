@@ -17,7 +17,7 @@ namespace NFLData.Controllers
         public ActionResult SuperBowl()
         {
 
-            DataController dc = new DataController("DefaultConnection");
+            SuperbowlDataController dc = new SuperbowlDataController("DefaultConnection");
 
             List<SuperBowl> sb = dc.GetSuperBowl();
 
