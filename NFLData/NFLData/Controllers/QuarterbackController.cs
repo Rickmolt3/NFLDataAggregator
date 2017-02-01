@@ -39,8 +39,6 @@ namespace NFLData.Controllers
 
             List<PlayerModel> pm = dc.GetAllQbs();
 
-            //IEnumerable<PlayerModel> pma = pm.OrderByDescending(x => x.Yards);//by default the yards are sorted from highest to lowest
-
             return View("Quarterback", pm);
         }
 
@@ -72,5 +70,7 @@ namespace NFLData.Controllers
 
             return View("QuarterbackYards", pma);
         }
+
+        //write some more controllers here to help in the sorting of the specific stats, refer to the orderbydescending code line above^^
     }
 }

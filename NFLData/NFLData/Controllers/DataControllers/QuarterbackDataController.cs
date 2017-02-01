@@ -41,7 +41,7 @@ namespace NFLData.Controllers.DataControllers
             }
         }
 
-        //data controller to pull all player data based on quarterback name
+        //Pulls all specific statistics for a specific player from the database and then puts it into the playermodel
         public List<PlayerModel> GetPlayer(string Quarterback)
         {
             // Readies stored proc from server.
@@ -75,7 +75,7 @@ namespace NFLData.Controllers.DataControllers
             return player;
         }
 
-        //takes a inputed qb and returns all his yards for the 2016 season
+        //Takes a specific quarterback and returns his yardage for that certain year
         public List<YardageModel> GetYardage(string Quarterback)
         {
             // Readies stored proc from server.
