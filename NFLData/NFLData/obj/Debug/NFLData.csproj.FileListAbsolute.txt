@@ -55,3 +55,6 @@ C:\Users\Bailey\Documents\GitHub\NFLDataAggregator\NFLData\NFLData\bin\Newtonsof
 C:\Users\Bailey\Documents\GitHub\NFLDataAggregator\NFLData\NFLData\obj\Debug\NFLData.csprojResolveAssemblyReference.cache
 C:\Users\Bailey\Documents\GitHub\NFLDataAggregator\NFLData\NFLData\obj\Debug\NFLData.dll
 C:\Users\Bailey\Documents\GitHub\NFLDataAggregator\NFLData\NFLData\obj\Debug\NFLData.pdb
+C:\Users\Bailey\Documents\GitHub\NFLDataAggregator\NFLData\NFLData\bin\Octokit.dll
+C:\Users\Bailey\Documents\GitHub\NFLDataAggregator\NFLData\NFLData\bin\Octokit.pdb
+C:\Users\Bailey\Documents\GitHub\NFLDataAggregator\NFLData\NFLData\bin\Octokit.xml
