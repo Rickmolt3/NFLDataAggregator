@@ -30,13 +30,13 @@ namespace NFLData.Controllers
         {
             ViewBag.Message = "My Contact Information";
 
+            //string for my github api request replace rickmolt3 with other github user name for someone elses information
             //https://api.github.com/users/rickmolt3
-            //add api request string here
-            //put the retured data into github model
-            //send the model to the view
-            //add the model to the view in the top
-            //add the @model.name etc to display the information
 
+            //string for getting all of a users github repos
+            //https://api.github.com/users/rickmolt3/repos
+
+            //code for my github api request for my github name,bio, and email
             HttpWebRequest request = WebRequest.Create("https://api.github.com/users/rickmolt3") as HttpWebRequest;
             request.Method = "GET";
             request.Proxy = null;
@@ -51,10 +51,11 @@ namespace NFLData.Controllers
 
                 JObject o = JObject.Parse(content1);
 
+                //paste the json objects into the viewbag and allow them to be used in my view
                 ViewBag.bio = o["bio"];
                 ViewBag.name = o["name"];
                 ViewBag.email = o["email"];
-                
+                ViewBag.location = o["location"];
             }
 
 
