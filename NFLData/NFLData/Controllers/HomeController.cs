@@ -28,7 +28,7 @@ namespace NFLData.Controllers
         //Contact page for my information uses gitubs api to pull back data and display it to the user
         public ActionResult Contact()
         {
-            ViewBag.Message = "My Contact Information";
+            ViewBag.Message = "Contact Information";
 
             //string for my github api request replace rickmolt3 with other github user name for someone elses information
             //https://api.github.com/users/rickmolt3
