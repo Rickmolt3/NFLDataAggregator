@@ -15,20 +15,20 @@ namespace NFLData.Controllers
     {
 
         //Contains the quarterback stat lookup
-        public ActionResult Quarterback()
+        public ActionResult QuarterbackStats()
         {
             return View();
         }
 
         //takes the form input and passes it to the data controller
         [HttpPost]
-        public ActionResult Quarterback(string Quarterback)
+        public ActionResult QuarterbackStats(string Quarterback)
         {
             QuarterbackDataController dc = new QuarterbackDataController("DefaultConnection");
 
             List<PlayerModel> pm = dc.GetPlayer(Quarterback);
 
-            return View(pm);
+            return View("QuarterbackStats",pm);
         }
 
         //grabs all quarterbacks and all their stats
@@ -39,9 +39,10 @@ namespace NFLData.Controllers
 
             List<PlayerModel> pm = dc.GetAllQbs();
 
-            return View("Quarterback", pm);
+            return View("QuarterbackStats", pm);
         }
 
+        //BEGINNING OF THE NEW PAGE HEADER QUARTERBACK YARDS
         //standard controller for the quarterbackyards view
         public ActionResult QuarterbackYards()
         {

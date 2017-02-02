@@ -6,6 +6,7 @@
     <title>NFL Data Aggregator</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="shortcut icon" HREF="~/atlanta-falcons-logo.ico">
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -21,7 +22,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
-                    <li>@Html.ActionLink("QB Stats", "Quarterback", "Quarterback")</li>
+                    <li>@Html.ActionLink("QB Stats", "QuarterbackStats", "Quarterback")</li>
                     <li>@Html.ActionLink("QB Yards", "QuarterbackYards", "Quarterback")</li>
                     @*need to reroute the two below links to appropriate controllers*@
                     <li>@Html.ActionLink("Rushing", "Rushing", "Stats")</li>
