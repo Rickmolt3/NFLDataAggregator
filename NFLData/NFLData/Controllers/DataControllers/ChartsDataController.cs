@@ -41,7 +41,7 @@ namespace NFLData.Controllers.DataControllers
             }
         }
 
-        //gets the selected team and then proceeds to display all the info from the database
+        //Grabs the selected player and gets their yards for the 2016 season
         public YardageModel GetYards(string quarterback)
         {
             // Readies stored proc from server.
