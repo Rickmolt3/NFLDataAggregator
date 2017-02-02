@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NFLData.Controllers.DataControllers;
+using NFLData.Models;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace NFLData.Controllers
 {
@@ -10,7 +15,11 @@ namespace NFLData.Controllers
     {
         public ActionResult StatChart()
         {
-            return View();
+            ChartsDataController dc = new ChartsDataController("DefaultConnection");
+
+            YardageModel pm = dc.GetYards("Matt Ryan");
+
+            return View(pm);
         }
        //charts controller shit goes here.
        //need to decide on what kind of chart i want to display

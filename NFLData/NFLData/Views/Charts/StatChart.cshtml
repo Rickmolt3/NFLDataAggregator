@@ -1,9 +1,11 @@
 ﻿@{
+
     ViewBag.Title = "StatChart";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    @model NFLData.Models.YardageModel
 }
 
-<h2>StatChart</h2>
+<h2 class="text-center">StatChart</h2>
 <hr />
 
 <html>
@@ -15,46 +17,15 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2013',  1000,      400],
+          ['Year', 'Julio', 'AB'],
+          ['2013',  @Model.Yards,      400],
           ['2014',  1170,      460],
           ['2015',  660,       1120],
           ['2016',  1030,      540]
         ]);
 
         var options = {
-          title: 'Company Performance',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
-        };
-
-        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
-</head>
-<body>
-    <div id="chart_div" style="width: 100%; height: 500px;"></div>
-</body>
-</html>
-<html>
-<head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2013',  1000,      400],
-          ['2014',  1170,      460],
-          ['2015',  660,       1120],
-          ['2016',  1030,      540]
-        ]);
-
-        var options = {
-          title: 'Company Performance',
+          title: 'Player Performance',
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
         };
@@ -69,121 +40,4 @@
 </body>
 </html>
 
-@*<html>
-    <head>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-          google.charts.load('current', {'packages':['corechart']});
-          google.charts.setOnLoadCallback(drawChart);
-
-          function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ['Year', 'Sales', 'Expenses'],
-              ['2013',  1000,      400],
-              ['2014',  1170,      460],
-              ['2015',  660,       1120],
-              ['2016',  1030,      540]
-            ]);
-
-            var options = {
-              title: 'Company Performance',
-              hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-              vAxis: {minValue: 0}
-            };
-
-            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
-          }
-        </script>
-    </head>
-    <body>
-        <div id="chart_div" style="width: 100%; height: 500px;"></div>
-    </body>
-    </html>*@
-
-@*<html>
-    <head>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-          google.charts.load('current', {'packages':['corechart']});
-          google.charts.setOnLoadCallback(drawChart);
-          function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ['Age', 'Weight'],
-              [ 8,      12],
-              [ 4,      5.5],
-              [ 11,     14],
-              [ 4,      5],
-              [ 3,      3.5],
-              [ 6.5,    7]
-            ]);
-
-            var options = {
-              title: 'Age vs. Weight comparison',
-              hAxis: {title: 'Age', minValue: 0, maxValue: 15},
-              vAxis: {title: 'Weight', minValue: 0, maxValue: 15},
-              legend: 'none'
-            };
-
-            var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
-
-            chart.draw(data, options);
-          }
-        </script>
-    </head>
-    <body>
-        <div id="chart_div" style="width: 900px; height: 500px;"></div>
-    </body>
-    </html>
-    <html>
-    <head>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-          google.charts.load('upcoming', {'packages':['geochart']});
-          google.charts.setOnLoadCallback(drawRegionsMap);
-
-          function drawRegionsMap() {
-
-            //var data = google.visualization.arrayToDataTable([
-            //  ['State','Popularity'],
-            //  ['US-TX' ,300],
-            //]);
-
-            //var options = {
-            //    region: 'US',
-            //    colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
-            //    backgroundColor: '#81d4fa',
-            //    datalessRegionColor: '#f8bbd0',
-            //    defaultColor: '#f5f5f5',
-            //};
-
-            var data = google.visualization.arrayToDataTable([
-              ['Country', 'Site'],
-              ['Alabama', 0],
-              ['Alaska', 1],
-              ['American Samoa', 2],
-              ['Arizona', 3],
-              ['Arkansas', 4],
-              ['California', 5],
-              ['Colorado', 6],
-              ['Connecticut', 7],
-              ['Delaware', 8],
-              ['District of Columbia', 9]
-            ]);
-
-
-            var options = { width: 556, height: 347 };
-            options['region'] = 'US';
-            options['resolution'] = 'provinces';
-            options['colors'] = ['#4bb5f3', '#FADC41', '#c44949', '#d74a12', '#0e9a0e', '#55c2ac', '#7c4b91', '#fadc41', '#0d6cca', '#7c4897'];
-
-            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-            chart.draw(data, options);
-          }
-        </script>
-    </head>
-    <body>
-        <div id="regions_div" style="width: 900px; height: 500px;"></div>
-    </body>
-    </html>*@
 
