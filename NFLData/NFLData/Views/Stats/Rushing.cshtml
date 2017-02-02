@@ -8,115 +8,147 @@
 <h2 class="text-center">Rushing</h2>
 <hr />
 
-<table class="table table-bordered table-striped table-responsive table-hover">
-    <tr class="info">
-        <th>
-            @Html.DisplayNameFor(model => model.Rank)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Team)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Age)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Position)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Games)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GamesStarted)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RushAttempts)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RushYds)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RushTD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RushLng)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RushYA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RushYG)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RushAG)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ScrimageYds)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalTds)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fumble)
-        </th>
-    </tr>
+@if (Model == null)
+{
+    <h4>Please Enter the name of the Rusher you want to search for.</h4>
+    <form role="form" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input class="form-control" placeholder="Rusher" name="Rushing" type="text" autofocus>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </fieldset>
+    </form>
+    <br />
+        @Html.ActionLink("All Rushing Stats", "AllRushing")
+        <br />
+}
+else if (Model != null)
+{
+    <h4>Please Enter the name of the Rusher you want to search for.</h4>
+    <form role="form" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input class="form-control" placeholder="Rusher" name="Rushing" type="text" autofocus>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </fieldset>
+    </form>
+    <br />
+        @Html.ActionLink("Reset Search", "Rushing")
+        <hr />
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rank)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Team)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Age)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Position)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Games)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GamesStarted)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RushAttempts)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RushYds)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RushTD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RushLng)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RushYA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RushYG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RushAG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ScrimageYds)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalTds)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fumble)
-        </td>
-    </tr>
+        <table class="table table-bordered table-striped table-responsive table-hover">
+            <tr class="info">
+                <th>
+                    @Html.DisplayNameFor(model => model.Rank)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Team)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Position)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Games)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GamesStarted)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RushAttempts)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RushYds)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RushTD)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RushLng)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RushYA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RushYG)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RushAG)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ScrimageYds)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalTds)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fumble)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rank)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Team)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Position)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Games)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GamesStarted)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RushAttempts)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RushYds)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RushTD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RushLng)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RushYA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RushYG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RushAG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ScrimageYds)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalTds)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fumble)
+                    </td>
+                </tr>
+            }
+        </table>
 }
 
-</table>
