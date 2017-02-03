@@ -10,7 +10,7 @@
 
 @if (Model == null)
 {
-    <h4>Please Enter the names of the QB's you want to search for.</h4>
+    <h4>Please Select the names of the QB's you want to search for.</h4>
     @*<form role="form" method="post">
         <fieldset>
             <div class="form-group">
@@ -26,9 +26,9 @@
     using (Html.BeginForm("StatChart", "Charts", FormMethod.Post))
     {
         <fieldset class="form-group">
-            @Html.DropDownList("AllNames", (SelectList)ViewBag.AllNames, "---Select QB---", new { @class = "form-control" })
+            @Html.DropDownList("AllNames", (SelectList)ViewBag.AllNames, null, new { @class = "form-control" })
             <br />
-            @Html.DropDownList("AllNames2", (SelectList)ViewBag.AllNames2, "---Select QB---", new { @class = "form-control" })
+            @Html.DropDownList("AllNames2", (SelectList)ViewBag.AllNames2, null, new { @class = "form-control" })
             <br />
             <input type="submit" value="Submit" class="btn btn-primary" />
         </fieldset>
@@ -38,7 +38,7 @@
 }
 else if (Model != null)
 {
-    <h4>Please Enter the names of the QB's you want to search for.</h4>
+    <h4>Please Select the names of the QB's you want to search for.</h4>
     @*<form role="form" method="post">
         <fieldset>
             <div class="form-group">
@@ -53,9 +53,9 @@ else if (Model != null)
     using (Html.BeginForm("StatChart", "Charts", FormMethod.Post))
     {
         <fieldset class="form-group">
-            @Html.DropDownList("AllNames", (SelectList)ViewBag.AllNames, "---Select QB---", new { @class = "form-control" })
+            @Html.DropDownList("AllNames", (SelectList)ViewBag.AllNames, null, new { @class = "form-control" })
             <br />
-            @Html.DropDownList("AllNames2", (SelectList)ViewBag.AllNames2, "---Select QB---", new { @class = "form-control" })
+            @Html.DropDownList("AllNames2", (SelectList)ViewBag.AllNames2, null, new { @class = "form-control" })
             <br />
             <input type="submit" value="Submit" class="btn btn-primary" />
         </fieldset>
