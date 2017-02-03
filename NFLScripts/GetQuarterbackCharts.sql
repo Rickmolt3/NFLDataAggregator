@@ -6,7 +6,7 @@ GO
 -- Description:	Gets the quarterbacks selected and their yardage
 
 -- =============================================
-CREATE PROCEDURE dbo.sp_GetChartStats
+ALTER PROCEDURE dbo.sp_GetChartStats
 	@Quarterback NVARCHAR(150),
 	@Quarterback2 NVARCHAR(150)
 AS
@@ -35,6 +35,7 @@ SELECT @touchdown2 = SUM(QBS.Touchdown)
 FROM QBStats_2016 AS QBS
 WHERE Quarterback LIKE '%' + @Quarterback2 + '%'
 Group By Quarterback
+
 
 SELECT @Quarterback [Quarterback],
 	@Yards [Yards],
