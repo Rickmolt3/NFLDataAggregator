@@ -53,28 +53,28 @@ else if (Model != null)
                 colors: ['#42f4eb','#0038A8']
             };
 
-            var chart1 = new google.visualization.PieChart(document.getElementById('piechart'));
+            var chart1 = new google.visualization.PieChart(document.getElementById('piechart1'));
 
             chart1.draw(data1, options1);
 
-
             var data2 = google.visualization.arrayToDataTable([
-            ['Quarterback', 'Yards'],
-            ['@Model.QBName',  @Model.QBTotal],
-            ['@Model.QB2Name',   @Model.QB2Total],
+               ['Quarterback', 'Touchdowns'],
+               ['@Model.QBName',  @Model.QBTouchdown],
+               ['@Model.QB2Name',   @Model.QB2Touchdown],
             ]);
 
             var options2 = {
-                title: 'Total Points Scored',
+                title: 'Touchdown Comparison',
                 colors: ['#42f4eb','#0038A8']
+
             };
 
-            var chart2 = new google.visualization.PieChart(document.getElementById('piechart3'));
+            var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));
 
             chart2.draw(data2, options2);
 
             var data3 = google.visualization.arrayToDataTable([
-                ['Quarterback', 'Yards'],
+                ['Quarterback', 'QB Rating'],
                 ['@Model.QBName',  @Model.QBRate],
                 ['@Model.QB2Name',   @Model.QB2Rate],
             ]);
@@ -84,26 +84,29 @@ else if (Model != null)
                 colors: ['#42f4eb','#0038A8']
             };
 
-            var chart3 = new google.visualization.PieChart(document.getElementById('piechart2'));
+            var chart3 = new google.visualization.PieChart(document.getElementById('piechart3'));
 
             chart3.draw(data3, options3);
 
             var data4 = google.visualization.arrayToDataTable([
-                ['Quarterback', 'Touchdowns'],
-                ['@Model.QBName',  @Model.QBTouchdown],
-                ['@Model.QB2Name',   @Model.QB2Touchdown],
+            ['Quarterback', 'Total Points'],
+            ['@Model.QBName',  @Model.QBTotal],
+            ['@Model.QB2Name',   @Model.QB2Total],
             ]);
 
             var options4 = {
-                title: 'Touchdown Comparison',
+                title: 'Total Points Scored',
                 colors: ['#42f4eb','#0038A8']
-
             };
 
-            var chart4 = new google.visualization.PieChart(document.getElementById('piechart1'));
+            var chart4 = new google.visualization.PieChart(document.getElementById('piechart4'));
 
             chart4.draw(data4, options4);
-        
+
+
+
+
+
         }
     </script>
 
@@ -111,8 +114,8 @@ else if (Model != null)
     @*display for qb comparison stats*@
     <div class="container">
 
-        <div id="piechart" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
         <div id="piechart1" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
+        <div id="piechart2" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
 
     </div>
 
@@ -120,8 +123,8 @@ else if (Model != null)
 
     <div class="container">
 
-        <div id="piechart2" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
         <div id="piechart3" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
+        <div id="piechart4" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
 
     </div>
 
