@@ -15,11 +15,8 @@ namespace NFLData.Controllers
     {
         public ActionResult StatChart()
         {
-            ChartsDataController dc = new ChartsDataController("DefaultConnection");
 
-            StatComparison pm = dc.CompareQuarterbacks("Matt Ryan", "Carson Palmer");
-
-            return View(pm);
+            return View();
         }
 
         [HttpPost]
@@ -28,9 +25,9 @@ namespace NFLData.Controllers
 
             ChartsDataController dc = new ChartsDataController("DefaultConnection");
 
-            StatComparison pm = dc.CompareQuarterbacks("matt ryan","aaron rodgers");
+            StatComparison pm = dc.CompareQuarterbacks(quarterback1,quarterback2);
 
-            return View("StatChart",pm);
+            return View(pm);
         }
 
     }

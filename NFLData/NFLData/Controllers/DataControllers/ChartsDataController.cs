@@ -84,10 +84,12 @@ namespace NFLData.Controllers.DataControllers
 
                                  QBName = dr.Field<string>("Quarterback"),
                                  QBYards = dr.Field<int>("Yards"),
+                                 QBTouchdown = dr.Field<int>("Touchdown"),
                                  QBName2 = dr.Field<string>("Quarterback2"),
-                                 QB2Yards = dr.Field<int>("Yards2")
-                              
-                          };
+                                 QB2Yards = dr.Field<int>("Yards2"),
+                                 QB2Touchdown = dr.Field<int>("Touchdown2"),
+
+            };
 
             return stat;
         }
