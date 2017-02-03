@@ -14,9 +14,9 @@
     @*<form role="form" method="post">
         <fieldset>
             <div class="form-group">
-                @Html.DropDownList("AllNames", "---Select A QB---",new { id="quarterback1"});
+                <input class="form-control" placeholder="First Quarterback(Matt Ryan)" name="quarterback1" type="text" autofocus>
                 <br />
-                @Html.DropDownList("AllNames", "---Select A QB---",new { id="quarterback2"});
+                <input class="form-control" placeholder="Second Quarterback(Aaron Rodgers)" name="quarterback2" type="text" autofocus>
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
         </fieldset>
@@ -25,13 +25,12 @@
     <br />
     using (Html.BeginForm("StatChart", "Charts", FormMethod.Post))
     {
-        <fieldset>
-            @Html.DropDownList("AllNames", "---Select A QB---")
+        <fieldset class="form-group">
+            @Html.DropDownList("AllNames", (SelectList)ViewBag.AllNames, "---Select QB---", new { @class = "form-control" })
             <br />
-            @Html.DropDownList("AllNames2", "---Select A QB---")
-            <p>
-                <input type="submit" value="Submit" />
-            </p>
+            @Html.DropDownList("AllNames2", (SelectList)ViewBag.AllNames2, "---Select QB---", new { @class = "form-control" })
+            <br />
+            <input type="submit" value="Submit" class="btn btn-primary" />
         </fieldset>
     }
     <br />
@@ -53,13 +52,12 @@ else if (Model != null)
     <br />
     using (Html.BeginForm("StatChart", "Charts", FormMethod.Post))
     {
-        <fieldset>
-            @Html.DropDownList("AllNames", "---Select A QB---")
+        <fieldset class="form-group">
+            @Html.DropDownList("AllNames", (SelectList)ViewBag.AllNames, "---Select QB---", new { @class = "form-control" })
             <br />
-            @Html.DropDownList("AllNames2", "---Select A QB---")
-            <p>
-                <input type="submit" value="Submit" />
-            </p>
+            @Html.DropDownList("AllNames2", (SelectList)ViewBag.AllNames2, "---Select QB---", new { @class = "form-control" })
+            <br />
+            <input type="submit" value="Submit" class="btn btn-primary" />
         </fieldset>
     }
     <br />

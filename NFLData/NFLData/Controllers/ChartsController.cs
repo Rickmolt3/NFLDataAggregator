@@ -44,6 +44,8 @@ namespace NFLData.Controllers
             return View();
         }
 
+        //if I ever need to revert to the old search just add two params here and pass em too data controller and drop the whole viewbag and then use the commented forms in view
+        //takes the form from statchart view and passes it to data controller
         [HttpPost]
         public ActionResult StatChart(FormCollection form)
         {
