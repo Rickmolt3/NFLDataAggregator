@@ -65,6 +65,11 @@ namespace NFLData.Controllers.DataControllers
                 TeamStadiumCapacity = dr.Field<int>("TeamStadiumCapacity"),
                 Latitude = dr.Field<decimal>("Latitude"),
                 Longitude = dr.Field<decimal>("Longitude"),
+                recieverName = dr.Field<string>("Player"),
+                recieverPosition = dr.Field<string>("recievingPosition"),
+                rusherName = dr.Field<string>("Name"),
+                rusherPosition = dr.Field<string>("runningPosition"),
+                
             };
 
             return team;

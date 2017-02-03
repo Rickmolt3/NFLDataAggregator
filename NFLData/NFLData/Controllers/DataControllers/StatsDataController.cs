@@ -41,13 +41,11 @@ namespace NFLData.Controllers.DataControllers
             }
         }
 
-        //write a data controller here that gets from sql the data for rushing and then populate the rushing model
-
+        //gets all the rushing rows from the database
         public List<Rushing> GetRushing()
         {
-            DbCommand getRush = db.GetStoredProcCommand("sp_getRushing");//returns the quarterback and total yardage for the season
+            DbCommand getRush = db.GetStoredProcCommand("sp_getRushing");
 
-            // Executes stored proc to return values into a DataSet.
             DataSet ds = db.ExecuteDataSet(getRush);
 
             var recieve = (from drRow in ds.Tables[0].AsEnumerable()
@@ -76,12 +74,11 @@ namespace NFLData.Controllers.DataControllers
             return recieve;
         }
 
-        //write a data controller here that gets from the sql the data for recieving and then populate the recieving model
+        //gets all of the recieving rows from the database
         public List<Recieving> GetRecieving()
         {
-            DbCommand getRec = db.GetStoredProcCommand("sp_getRecieving");//returns the quarterback and total yardage for the season
+            DbCommand getRec = db.GetStoredProcCommand("sp_getRecieving");
 
-            // Executes stored proc to return values into a DataSet.
             DataSet ds = db.ExecuteDataSet(getRec);
 
             var recieve = (from drRow in ds.Tables[0].AsEnumerable()
@@ -108,16 +105,13 @@ namespace NFLData.Controllers.DataControllers
             return recieve;
         }
 
-        //make a data controller here to get the rushing person by name , also make a stored proc
-
-        //write a data controller here that gets from the sql the data for recieving and then populate the recieving model
+        //gets the recieving stats for a specific player
         public List<Recieving> GetRecievingStats(string Reciever)
         {
-            DbCommand getRec = db.GetStoredProcCommand("sp_GetRecievingStats");//returns the quarterback and total yardage for the season
+            DbCommand getRec = db.GetStoredProcCommand("sp_GetRecievingStats");
 
             db.AddInParameter(getRec, "@Player", DbType.String, Reciever);
 
-            // Executes stored proc to return values into a DataSet.
             DataSet ds = db.ExecuteDataSet(getRec);
 
             var recieve = (from drRow in ds.Tables[0].AsEnumerable()
@@ -147,11 +141,10 @@ namespace NFLData.Controllers.DataControllers
         //gets the rusher by name
         public List<Rushing> GetRushingStats(string Rusher)
         {
-            DbCommand getRush = db.GetStoredProcCommand("sp_GetRushingStats");//returns the quarterback and total yardage for the season
+            DbCommand getRush = db.GetStoredProcCommand("sp_GetRushingStats");
 
             db.AddInParameter(getRush, "@Name", DbType.String, Rusher);
 
-            // Executes stored proc to return values into a DataSet.
             DataSet ds = db.ExecuteDataSet(getRush);
 
             var rush = (from drRow in ds.Tables[0].AsEnumerable()

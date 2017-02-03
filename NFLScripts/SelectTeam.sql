@@ -9,14 +9,23 @@ GO
 CREATE PROCEDURE dbo.sp_GetTeam
 	@TeamName NVARCHAR(150)
 AS
-SELECT TeamName,
-	   TeamCity,
-	   TeamDivision,
-	   TeamStadium,
-	   TeamStadiumCapacity,
-	   TeamHeadCoach,
-	   Latitude,
-	   Longitude
+SELECT tms.TeamName,
+	   tms.TeamCity,
+	   tms.TeamDivision,
+	   tms.TeamStadium,
+	   tms.TeamStadiumCapacity,
+	   tms.TeamHeadCoach,
+	   tms.Latitude,
+	   tms.Longitude,
+	   rd.Player,
+	   rd.Position [recievingPosition],
+	   rbd.[Name],
+	   rbd.Position [runningPosition]
 
-FROM Teams
+
+FROM Teams AS tms
+LEFT JOIN recievingdata AS rd
+ON tms.TeamName = rd.Team
+LEFT JOIN runningbackdata AS rbd
+ON tms.TeamName = rbd.Team
 WHERE TeamName LIKE '%' + @TeamName + '%'

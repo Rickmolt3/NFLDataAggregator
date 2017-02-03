@@ -40,6 +40,17 @@ namespace NFLData.Models
         [DefaultValue(0)]
         public decimal Longitude { get; set; }
 
+        //the two properties below are used to join the recieving and rushing tables to the team table in a stored proc and return popular players.
+        [DisplayName("Name:")]
+        public string rusherName { get; set; }
+
+        [DisplayName("Position:")]
+        public string rusherPosition { get; set; }
+
+        public string recieverName { get; set; }
+
+        public string recieverPosition { get; set; }
+
 
 
     }
