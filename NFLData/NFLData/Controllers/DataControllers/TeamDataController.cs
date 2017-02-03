@@ -74,5 +74,26 @@ namespace NFLData.Controllers.DataControllers
 
             return team;
         }
+
+        //gets all the team location data from the db for every team
+        public List<TeamLocation> GetTeamLocation()
+        {
+            DbCommand getSB = db.GetStoredProcCommand("sp_GetTeamLocation");
+
+            // Executes stored proc to return values into a DataSet.
+            DataSet ds = db.ExecuteDataSet(getSB);
+
+            var location = (from drRow in ds.Tables[0].AsEnumerable()
+                         select new TeamLocation()
+                         {
+
+                             Location = drRow.Field<string>("TeamCity"),
+                             Latitude = drRow.Field<decimal>("Latitude"),
+                             Longitude = drRow.Field<decimal>("Longitude"),
+                            
+                         }).ToList();
+
+            return location;
+        }
     }
 }

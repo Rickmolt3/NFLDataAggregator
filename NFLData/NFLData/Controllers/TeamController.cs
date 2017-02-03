@@ -31,5 +31,15 @@ namespace NFLData.Controllers
 
             return View(tm);
         }
+
+        //team map controller that feeds data to the teammap view
+        public ActionResult TeamMap()
+        {
+            TeamDataController dc = new TeamDataController("DefaultConnection");
+
+            IEnumerable<TeamLocation> tm = dc.GetTeamLocation();
+
+            return View(tm);
+        }
     }
 }

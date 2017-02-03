@@ -180,6 +180,7 @@
     <Compile Include="Models\Rushing.cs" />
     <Compile Include="Models\StatComparison.cs" />
     <Compile Include="Models\SuperBowl.cs" />
+    <Compile Include="Models\TeamLocation.cs" />
     <Compile Include="Models\TeamModel.cs" />
     <Compile Include="Models\YardageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

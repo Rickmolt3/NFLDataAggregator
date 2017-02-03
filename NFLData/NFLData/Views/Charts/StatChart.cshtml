@@ -6,11 +6,13 @@
 }
 
 <h2 class="text-center">Quarterback Comparison Statistics Charts</h2>
+
 <hr />
 
 @if (Model == null)
 {
     <h4>Please Select the names of the QB's you want to search for.</h4>
+    <h5>This Includes any player who threw a pass as well.</h5>
     @*<form role="form" method="post">
         <fieldset>
             <div class="form-group">
@@ -39,6 +41,7 @@
 else if (Model != null)
 {
     <h4>Please Select the names of the QB's you want to search for.</h4>
+    <h5>This Includes any player who threw a pass as well.</h5>
     @*<form role="form" method="post">
         <fieldset>
             <div class="form-group">
