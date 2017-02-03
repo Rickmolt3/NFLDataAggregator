@@ -1,32 +1,47 @@
 ﻿@{
     ViewBag.Title = "TeamMap";
     @model IEnumerable<NFLData.Models.TeamLocation>
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+
+        .info-item {
+            margin-bottom: 50px;
+        }
+    </style>
 }
 
-<h2>TeamMap</h2>
+<h2 class="text-center">TeamMap</h2>
+<hr />
 
 <div id="map"></div>
 <script>
-      function initMap() {
-        var myloc = {lat: @Model.Latitude , lng: @Model.Longitude}; 
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
-          center: myloc
-        });
-        var marker = new google.maps.Marker({
-          position: myloc,
-          map: map
-        });
+    function initMap() {
+            var myloc = {lat: 39.50 , lng: -95.35}; 
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: myloc
+            });
+            //var marker = new google.maps.Marker({
+            //    position: myloc,
+            //    map: map
+            //});
+        
+            @foreach (var item in Model)
+            {
+                <text>
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(@item.Latitude,@item.Longitude),
+                    map: map,
+                    title : "@item.Location"
+                });
+                </text>
 
-        @foreach (var item in Model)
-        {
-            //attempt to rewrite 
-            @item.Location
-            @item.Longitude
-            @item.Latitude
-        }
-      }
+            }
+
+    }
 </script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAouj0O35FNcvrh1pbfq_ksRGmjDY_WD9I&callback=initMap">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAouj0O35FNcvrh1pbfq_ksRGmjDY_WD9I&callback=initMap">
 </script>
