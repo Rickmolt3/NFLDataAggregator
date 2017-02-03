@@ -100,6 +100,25 @@ namespace NFLData.Controllers.DataControllers
             return stat;
         }
 
-       
+        //gets all qb names from the database
+        public List<AllQuarterback> GetAllQBNames()
+        {
+            DbCommand getSB = db.GetStoredProcCommand("sp_GetAllQBNames");//returns the quarterback and total yardage for the season
+
+            // Executes stored proc to return values into a DataSet.
+            DataSet ds = db.ExecuteDataSet(getSB);
+
+            var names = (from drRow in ds.Tables[0].AsEnumerable()
+                         select new AllQuarterback()
+                         {
+                             Name = drRow.Field<string>("Quarterback"),
+                             
+
+                         }).ToList();
+
+            return names;
+        }
     }
+
+
 }

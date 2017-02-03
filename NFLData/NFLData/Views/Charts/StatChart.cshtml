@@ -11,21 +11,36 @@
 @if (Model == null)
 {
     <h4>Please Enter the names of the QB's you want to search for.</h4>
-    <form role="form" method="post">
+    @*<form role="form" method="post">
         <fieldset>
             <div class="form-group">
-                <input class="form-control" placeholder="First Quarterback(Matt Ryan)" name="quarterback1" type="text" autofocus>
+                @Html.DropDownList("AllNames", "---Select A QB---",new { id="quarterback1"});
                 <br />
-                <input class="form-control" placeholder="Second Quarterback(Aaron Rodgers)" name="quarterback2" type="text" autofocus>
+                @Html.DropDownList("AllNames", "---Select A QB---",new { id="quarterback2"});
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
         </fieldset>
-    </form>
+    </form>*@
+
+    <br />
+    using (Html.BeginForm("StatChart", "Charts", FormMethod.Post))
+    {
+        <fieldset>
+            @Html.DropDownList("AllNames", "---Select A QB---")
+            <br />
+            @Html.DropDownList("AllNames2", "---Select A QB---")
+            <p>
+                <input type="submit" value="Submit" />
+            </p>
+        </fieldset>
+    }
+    <br />
+    
 }
 else if (Model != null)
 {
     <h4>Please Enter the names of the QB's you want to search for.</h4>
-    <form role="form" method="post">
+    @*<form role="form" method="post">
         <fieldset>
             <div class="form-group">
                 <input class="form-control" placeholder="First Quarterback(Matt Ryan)" name="quarterback1" type="text" autofocus>
@@ -34,7 +49,20 @@ else if (Model != null)
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
         </fieldset>
-    </form>
+    </form>*@
+    <br />
+    using (Html.BeginForm("StatChart", "Charts", FormMethod.Post))
+    {
+        <fieldset>
+            @Html.DropDownList("AllNames", "---Select A QB---")
+            <br />
+            @Html.DropDownList("AllNames2", "---Select A QB---")
+            <p>
+                <input type="submit" value="Submit" />
+            </p>
+        </fieldset>
+    }
+    <br />
 
     @*begin script for google charts for qb comparison stats*@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -49,8 +77,13 @@ else if (Model != null)
                 ]);
 
             var options1 = {
+                legend:'bottom',
                 title: 'Yardage Comparison',
-                colors: ['#42f4eb','#0038A8']
+                colors: ['#42f4eb', '#0038A8'],
+                is3D: true,
+                slices: {
+                    1:{offset: 0.1}
+                },
             };
 
             var chart1 = new google.visualization.PieChart(document.getElementById('piechart1'));
@@ -64,8 +97,13 @@ else if (Model != null)
             ]);
 
             var options2 = {
+                legend: 'bottom',
                 title: 'Touchdown Comparison',
-                colors: ['#42f4eb','#0038A8']
+                colors: ['#42f4eb', '#0038A8'],
+                is3D: true,
+                slices: {
+                    1: { offset: 0.1 }
+                },
 
             };
 
@@ -80,8 +118,13 @@ else if (Model != null)
             ]);
 
             var options3 = {
+                legend: 'bottom',
                 title: 'Quarterback Rating',
-                colors: ['#42f4eb','#0038A8']
+                colors: ['#42f4eb', '#0038A8'],
+                is3D: true,
+                slices: {
+                    1: { offset: 0.1 }
+                },
             };
 
             var chart3 = new google.visualization.PieChart(document.getElementById('piechart3'));
@@ -95,8 +138,13 @@ else if (Model != null)
             ]);
 
             var options4 = {
+                legend: 'bottom',
                 title: 'Total Points Scored',
-                colors: ['#42f4eb','#0038A8']
+                colors: ['#42f4eb', '#0038A8'],
+                is3D: true,
+                slices: {
+                    1: { offset: 0.1 }
+                },
             };
 
             var chart4 = new google.visualization.PieChart(document.getElementById('piechart4'));
@@ -110,21 +158,23 @@ else if (Model != null)
         }
     </script>
 
-
+    <hr />
     @*display for qb comparison stats*@
     <div class="container">
-
-        <div id="piechart1" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
-        <div id="piechart2" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
+        <h3 class="text-center"><b>Name:</b> @Model.QBName , <b>Total Yards:</b> @Model.QBYards , <b>Total TDS:</b> @Model.QBTouchdown</h3>
+        <h3 class="text-center"><b>Name:</b> @Model.QB2Name , <b>Total Yards:</b> @Model.QB2Yards , <b>Total TDS:</b> @Model.QB2Touchdown</h3>
+        <div id="piechart1" class="col-lg-6 " style="width: 50%; height: 400px; "></div>
+        <div id="piechart2" class="col-lg-6 " style="width: 50%; height: 400px; "></div>
 
     </div>
 
     <hr />
 
     <div class="container">
-
-        <div id="piechart3" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
-        <div id="piechart4" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
+        <h3 class="text-center"><b>Name:</b> @Model.QBName , <b>Average Rating:</b> @Model.QBRate , <b>Total Points:</b> @Model.QBTotal</h3>
+        <h3 class="text-center"><b>Name:</b> @Model.QB2Name , <b>Average Rating:</b> @Model.QB2Rate , <b>Total Points:</b> @Model.QB2Total</h3>
+        <div id="piechart3" class="col-lg-6 " style="width: 50%; height: 400px; "></div>
+        <div id="piechart4" class="col-lg-6 " style="width: 50%; height: 400px; "></div>
 
     </div>
 

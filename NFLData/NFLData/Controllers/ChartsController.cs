@@ -15,19 +15,69 @@ namespace NFLData.Controllers
     {
         public ActionResult StatChart()
         {
+            ChartsDataController dc = new ChartsDataController("DefaultConnection");
+            
+            //code for viewbag
+
+            List<SelectListItem> names = new List<SelectListItem>();
+
+            var namez = dc.GetAllQBNames();
+
+            foreach(var item in namez)
+            {
+                names.Add(new SelectListItem { Text = item.Name, Value = item.Name});
+                ViewBag.AllNames = new SelectList(names, "Value", "Text");
+            }
+
+            List<SelectListItem> names2 = new List<SelectListItem>();
+
+            var namez2 = dc.GetAllQBNames();
+
+            foreach (var item in namez2)
+            {
+                names2.Add(new SelectListItem { Text = item.Name, Value = item.Name });
+                ViewBag.AllNames2 = new SelectList(names, "Value", "Text");
+            }
+
+            //end of the viewbag code
 
             return View();
         }
 
         [HttpPost]
-        public ActionResult StatChart(string quarterback1,string quarterback2)
+        public ActionResult StatChart(FormCollection form)
         {
 
             ChartsDataController dc = new ChartsDataController("DefaultConnection");
 
-            StatComparison pm = dc.CompareQuarterbacks(quarterback1,quarterback2);
+            //start of code for select list
 
-            return View(pm);
+            List<SelectListItem> names = new List<SelectListItem>();
+
+            var namez = dc.GetAllQBNames();
+
+            foreach (var item in namez)
+            {
+                names.Add(new SelectListItem { Text = item.Name, Value = item.Name });
+                ViewBag.AllNames = new SelectList(names, "Value", "Text");
+            }
+
+            List<SelectListItem> names2 = new List<SelectListItem>();
+
+            var namez2 = dc.GetAllQBNames();
+
+            foreach (var item in namez2)
+            {
+                names2.Add(new SelectListItem { Text = item.Name, Value = item.Name });
+                ViewBag.AllNames2 = new SelectList(names, "Value", "Text");
+            }
+            
+            //end of code for select list
+
+            StatComparison pm = dc.CompareQuarterbacks(form["AllNames"],form["AllNames2"]);
+
+
+            return View(pm); 
         }
 
     }

@@ -22,42 +22,42 @@ AS
 
 SELECT @Yards = SUM(QBS.Yards)
 FROM QBStats_2016 AS QBS
-WHERE Quarterback LIKE '%' + @Quarterback + '%'
+WHERE Quarterback LIKE @Quarterback + '%'
 Group By Quarterback
 
 SELECT @Yards2 = SUM(QBS.Yards)
 FROM QBStats_2016 AS QBS
-WHERE Quarterback LIKE '%' + @Quarterback2 + '%'
+WHERE Quarterback LIKE  @Quarterback2 + '%'
 Group By Quarterback
 
 SELECT @touchdown = SUM(QBS.Touchdown)
 FROM QBStats_2016 AS QBS
-WHERE Quarterback LIKE '%' + @Quarterback + '%'
+WHERE Quarterback LIKE @Quarterback + '%'
 Group By Quarterback
 
 SELECT @touchdown2 = SUM(QBS.Touchdown)
 FROM QBStats_2016 AS QBS
-WHERE Quarterback LIKE '%' + @Quarterback2 + '%'
+WHERE Quarterback LIKE @Quarterback2 + '%'
 Group By Quarterback
 
 SELECT @Rate = AVG(QBS.Rate)
 FROM QBStats_2016 AS QBS
-WHERE Quarterback LIKE '%' + @Quarterback + '%'
+WHERE Quarterback LIKE @Quarterback + '%'
 Group By Quarterback
 
 SELECT @Rate2 = AVG(QBS.Rate)
 FROM QBStats_2016 AS QBS
-WHERE Quarterback LIKE '%' + @Quarterback2 + '%'
+WHERE Quarterback LIKE @Quarterback2 + '%'
 Group By Quarterback
 
 SELECT @TotalPoints = SUM(QBS.TotalPoints)
 FROM QBStats_2016 AS QBS
-WHERE Quarterback LIKE '%' + @Quarterback + '%'
+WHERE Quarterback LIKE @Quarterback + '%'
 Group By Quarterback
 
 SELECT @TotalPoints2 = SUM(QBS.TotalPoints)
 FROM QBStats_2016 AS QBS
-WHERE Quarterback LIKE '%' + @Quarterback2 + '%'
+WHERE Quarterback LIKE @Quarterback2 + '%'
 Group By Quarterback
 
 SELECT @Quarterback [Quarterback],
