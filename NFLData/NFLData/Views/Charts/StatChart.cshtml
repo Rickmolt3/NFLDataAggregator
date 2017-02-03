@@ -1,8 +1,8 @@
 ﻿@{
-
     ViewBag.Title = "StatChart";
     Layout = "~/Views/Shared/_Layout.cshtml";
     @model NFLData.Models.StatComparison
+
 }
 
 <h2 class="text-center">Quarterback Comparison Statistics Charts</h2>
@@ -36,150 +36,93 @@ else if (Model != null)
         </fieldset>
     </form>
 
-    @*need to find a way to add all the charts into one item so its no overloaded*@
+    @*begin script for google charts for qb comparison stats*@
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawCharts);
+        function drawCharts() {
+            var data1 = google.visualization.arrayToDataTable([
+            ['Quarterback', 'Yards'],
+            ['@Model.QBName',  @Model.QBYards],
+            ['@Model.QB2Name',   @Model.QB2Yards],
+                ]);
 
-    @*first chart for yards*@
-    <html>
-    <head>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
+            var options1 = {
+                title: 'Yardage Comparison',
+                colors: ['#42f4eb','#0038A8']
+            };
 
-        var data = google.visualization.arrayToDataTable([
-          ['Quarterback', 'Yards'],
-          ['@Model.QBName',  @Model.QBYards],
-          ['@Model.QB2Name',   @Model.QB2Yards],
-        ]);
+            var chart1 = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        var options = {
-            title: 'Yardage Comparison',
-            colors: ['#42f4eb','#0038A8']
-        };
+            chart1.draw(data1, options1);
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        chart.draw(data, options);
-      }
-        </script>
-    </head>
-    <body>
+            var data2 = google.visualization.arrayToDataTable([
+            ['Quarterback', 'Yards'],
+            ['@Model.QBName',  @Model.QBTotal],
+            ['@Model.QB2Name',   @Model.QB2Total],
+            ]);
+
+            var options2 = {
+                title: 'Total Points Scored',
+                colors: ['#42f4eb','#0038A8']
+            };
+
+            var chart2 = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+            chart2.draw(data2, options2);
+
+            var data3 = google.visualization.arrayToDataTable([
+                ['Quarterback', 'Yards'],
+                ['@Model.QBName',  @Model.QBRate],
+                ['@Model.QB2Name',   @Model.QB2Rate],
+            ]);
+
+            var options3 = {
+                title: 'Quarterback Rating',
+                colors: ['#42f4eb','#0038A8']
+            };
+
+            var chart3 = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+            chart3.draw(data3, options3);
+
+            var data4 = google.visualization.arrayToDataTable([
+                ['Quarterback', 'Touchdowns'],
+                ['@Model.QBName',  @Model.QBTouchdown],
+                ['@Model.QB2Name',   @Model.QB2Touchdown],
+            ]);
+
+            var options4 = {
+                title: 'Touchdown Comparison',
+                colors: ['#42f4eb','#0038A8']
+
+            };
+
+            var chart4 = new google.visualization.PieChart(document.getElementById('piechart1'));
+
+            chart4.draw(data4, options4);
         
-        
-    </body>
-    </html>
+        }
+    </script>
 
-    @*second chart for touchdowns*@
-    <html>
-    <head>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Quarterback', 'Touchdowns'],
-          ['@Model.QBName',  @Model.QBTouchdown],
-          ['@Model.QB2Name',   @Model.QB2Touchdown],
-        ]);
-
-          var options = {
-              title: 'Touchdown Comparison',
-              colors: ['#42f4eb','#0038A8']
-
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
-
-        chart.draw(data, options);
-      }
-        </script>
-    </head>
-    <body>
-        
-        
-    </body>
-    </html>
-
-    @*third chart for rate*@
-    <html>
-    <head>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Quarterback', 'Yards'],
-          ['@Model.QBName',  @Model.QBRate],
-          ['@Model.QB2Name',   @Model.QB2Rate],
-        ]);
-
-        var options = {
-            title: 'Quarterback Rating',
-            colors: ['#42f4eb','#0038A8']
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-
-        chart.draw(data, options);
-      }
-        </script>
-    </head>
-    <body>
-        
-
-    </body>
-    </html>
-
-    @*third chart for yards*@
-    <html>
-    <head>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Quarterback', 'Yards'],
-          ['@Model.QBName',  @Model.QBTotal],
-          ['@Model.QB2Name',   @Model.QB2Total],
-        ]);
-
-        var options = {
-            title: 'Total Points Scored',
-            colors: ['#42f4eb','#0038A8']
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
-
-        chart.draw(data, options);
-      }
-        </script>
-    </head>
-    <body>
-        
-
-    </body>
-    </html>
-
-    @*display for all the graphs and their data*@
+    @*display for qb comparison stats*@
     <div class="container">
 
         <div id="piechart" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
         <div id="piechart1" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
 
     </div>
+
     <hr />
+
     <div class="container">
 
         <div id="piechart2" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
         <div id="piechart3" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
 
     </div>
-    
+
 }
