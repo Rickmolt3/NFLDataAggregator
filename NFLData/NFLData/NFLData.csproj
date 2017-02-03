@@ -275,6 +275,7 @@
     <Content Include="Views\Stats\Recieving.cshtml" />
     <Content Include="Views\Stats\Rushing.cshtml" />
     <Content Include="Views\Charts\StatChart.cshtml" />
+    <Content Include="Views\Team\TeamMap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

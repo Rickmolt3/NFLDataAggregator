@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "TeamMap";
+    @model IEnumerable<NFLData.Models.TeamLocation>
+}
+
+<h2>TeamMap</h2>
+
+<div id="map"></div>
+<script>
+      function initMap() {
+        var myloc = {lat: @Model.Latitude , lng: @Model.Longitude}; 
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: myloc
+        });
+        var marker = new google.maps.Marker({
+          position: myloc,
+          map: map
+        });
+
+        @foreach (var item in Model)
+        {
+            //attempt to rewrite 
+            @item.Location
+            @item.Longitude
+            @item.Latitude
+        }
+      }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAouj0O35FNcvrh1pbfq_ksRGmjDY_WD9I&callback=initMap">
+</script>
