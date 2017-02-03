@@ -36,6 +36,8 @@ else if (Model != null)
         </fieldset>
     </form>
 
+    @*need to find a way to add all the charts into one item so its no overloaded*@
+
     @*first chart for yards*@
     <html>
     <head>
@@ -48,12 +50,12 @@ else if (Model != null)
         var data = google.visualization.arrayToDataTable([
           ['Quarterback', 'Yards'],
           ['@Model.QBName',  @Model.QBYards],
-          ['@Model.QBName2',   @Model.QB2Yards],
+          ['@Model.QB2Name',   @Model.QB2Yards],
         ]);
 
         var options = {
             title: 'Yardage Comparison',
-            colors: ['#42b0f4', '#42f4eb']
+            colors: ['#42f4eb','#0038A8']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -63,7 +65,7 @@ else if (Model != null)
         </script>
     </head>
     <body>
-        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        
         
     </body>
     </html>
@@ -80,12 +82,12 @@ else if (Model != null)
         var data = google.visualization.arrayToDataTable([
           ['Quarterback', 'Touchdowns'],
           ['@Model.QBName',  @Model.QBTouchdown],
-          ['@Model.QBName2',   @Model.QB2Touchdown],
+          ['@Model.QB2Name',   @Model.QB2Touchdown],
         ]);
 
           var options = {
               title: 'Touchdown Comparison',
-              colors: ['#42b0f4', '#42f4eb']
+              colors: ['#42f4eb','#0038A8']
 
         };
 
@@ -96,9 +98,88 @@ else if (Model != null)
         </script>
     </head>
     <body>
-        <div id="piechart1" style="width: 900px; height: 500px;"></div>
+        
         
     </body>
     </html>
 
+    @*third chart for rate*@
+    <html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Quarterback', 'Yards'],
+          ['@Model.QBName',  @Model.QBRate],
+          ['@Model.QB2Name',   @Model.QB2Rate],
+        ]);
+
+        var options = {
+            title: 'Quarterback Rating',
+            colors: ['#42f4eb','#0038A8']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data, options);
+      }
+        </script>
+    </head>
+    <body>
+        
+
+    </body>
+    </html>
+
+    @*third chart for yards*@
+    <html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Quarterback', 'Yards'],
+          ['@Model.QBName',  @Model.QBTotal],
+          ['@Model.QB2Name',   @Model.QB2Total],
+        ]);
+
+        var options = {
+            title: 'Total Points Scored',
+            colors: ['#42f4eb','#0038A8']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+        chart.draw(data, options);
+      }
+        </script>
+    </head>
+    <body>
+        
+
+    </body>
+    </html>
+
+    @*display for all the graphs and their data*@
+    <div class="container">
+
+        <div id="piechart" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
+        <div id="piechart1" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
+
+    </div>
+    <hr />
+    <div class="container">
+
+        <div id="piechart2" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
+        <div id="piechart3" class="col-lg-6 " style="width: 50%; height: 500px; "></div>
+
+    </div>
+    
 }

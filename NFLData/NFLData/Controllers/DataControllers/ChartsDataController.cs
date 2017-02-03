@@ -81,13 +81,19 @@ namespace NFLData.Controllers.DataControllers
 
             StatComparison stat = new StatComparison()
                              {
-
+                                //qb number one
                                  QBName = dr.Field<string>("Quarterback"),
                                  QBYards = dr.Field<int>("Yards"),
                                  QBTouchdown = dr.Field<int>("Touchdown"),
-                                 QBName2 = dr.Field<string>("Quarterback2"),
+                                 QBRate = dr.Field<int>("Rate"),
+                                 QBTotal = dr.Field<int>("TotalPoints"),
+
+                                 //qb number two
+                                 QB2Name = dr.Field<string>("Quarterback2"),
                                  QB2Yards = dr.Field<int>("Yards2"),
                                  QB2Touchdown = dr.Field<int>("Touchdown2"),
+                                 QB2Rate = dr.Field<int>("Rate2"),
+                                 QB2Total = dr.Field<int>("TotalPoints2"),
 
             };
 

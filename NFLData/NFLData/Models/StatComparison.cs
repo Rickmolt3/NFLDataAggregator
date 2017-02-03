@@ -14,15 +14,23 @@ namespace NFLData.Models
 
         public int QBTouchdown { get; set; }
 
+        public int QBRate { get; set; }
+
+        public int QBTotal { get; set; }
+
         //end of first qb
 
         //start of second qb
-        public string QBName2 { get; set; }
+        public string QB2Name { get; set; }
 
         public int QB2Yards { get; set; }
 
         public int QB2Touchdown { get; set; }
-        
+
+        public int QB2Rate { get; set; }
+
+        public int QB2Total { get; set; }
+
         //end of second qb
 
     }
