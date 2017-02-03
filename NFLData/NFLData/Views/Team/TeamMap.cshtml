@@ -24,10 +24,6 @@
                 zoom: 4,
                 center: myloc
             });
-            //var marker = new google.maps.Marker({
-            //    position: myloc,
-            //    map: map
-            //});
         
             @foreach (var item in Model)
             {
@@ -35,8 +31,9 @@
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(@item.Latitude,@item.Longitude),
                     map: map,
-                    title : "@item.Location"
+                    title : '@item.Location' //add more properties or animations etc. Change this from city to team name
                 });
+                
                 </text>
 
             }
