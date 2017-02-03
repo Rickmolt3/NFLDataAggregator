@@ -63,5 +63,35 @@ namespace NFLData.Controllers.DataControllers
 
             return yards;
         }
+
+        //Grabs the two selected quarterbacks and then compares their yardage in a chart
+        public StatComparison CompareQuarterbacks(string quarterback1,string quarterback2)
+        {
+            // Readies stored proc from server.
+            DbCommand getYards = db.GetStoredProcCommand("sp_GetChartStats");
+
+            //adds two parameters
+            db.AddInParameter(getYards, "@Quarterback", DbType.String, quarterback1);
+            db.AddInParameter(getYards, "@Quarterback2", DbType.String, quarterback2);
+
+            // Executes stored proc to return values into a DataSet.
+            DataSet ds = db.ExecuteDataSet(getYards);
+
+            DataRow dr = ds.Tables[0].Rows[0];
+
+            StatComparison stat = new StatComparison()
+                             {
+
+                                 QBName = dr.Field<string>("Quarterback"),
+                                 QBYards = dr.Field<int>("Yards"),
+                                 QBName2 = dr.Field<string>("Quarterback2"),
+                                 QB2Yards = dr.Field<int>("Yards2")
+                              
+                          };
+
+            return stat;
+        }
+
+       
     }
 }

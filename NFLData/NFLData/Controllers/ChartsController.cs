@@ -17,13 +17,21 @@ namespace NFLData.Controllers
         {
             ChartsDataController dc = new ChartsDataController("DefaultConnection");
 
-            YardageModel pm = dc.GetYards("Matt Ryan");
+            StatComparison pm = dc.CompareQuarterbacks("Matt Ryan", "Carson Palmer");
 
             return View(pm);
         }
-       //charts controller shit goes here.
-       //need to decide on what kind of chart i want to display
-       //let the user select a certain player and then display there certain stats in a grphics way
+
+        [HttpPost]
+        public ActionResult StatChart(string quarterback1,string quarterback2)
+        {
+
+            ChartsDataController dc = new ChartsDataController("DefaultConnection");
+
+            StatComparison pm = dc.CompareQuarterbacks("matt ryan","aaron rodgers");
+
+            return View("StatChart",pm);
+        }
 
     }
 }

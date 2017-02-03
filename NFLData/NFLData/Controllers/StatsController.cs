@@ -57,6 +57,7 @@ namespace NFLData.Controllers
             return View("Recieving",sb);
         }
 
+
         //takes the form input and passes it to the data controller
         [HttpPost]
         public ActionResult Recieving(string Recieving)

@@ -48,6 +48,18 @@
                 <br />
                 <h4><a href="https://en.wikipedia.org/wiki/@Model.TeamDivision">@Model.TeamDivision</a></h4>
             </div>
+            <div class="info-item">
+                <h3><b>Notable Rushers:</b></h3>
+                @if (Model != null && !String.IsNullOrEmpty(Model.rusherName))
+                {
+                    <h4><a href="https://en.wikipedia.org/wiki/@Model.rusherName">@Model.rusherName/@Model.rusherPosition</a></h4>
+
+                }
+                else
+                {
+                    <h4>No Top 50 Rusher</h4>
+                }
+            </div>
 
         </div>
 
@@ -68,11 +80,16 @@
                 <h4>@Model.TeamStadiumCapacity</h4>
             </div>
             <div class="info-item">
-                <h3><b>Notable Players:</b></h3>
-               <h4>@Model.recieverName/@Model.recieverPosition</h4>               
-                <br />
-                <h4>@Model.rusherName/@Model.rusherPosition</h4>
-                
+                <h3><b>Notable Recievers:</b></h3>
+                @if (Model != null && !String.IsNullOrEmpty(Model.recieverName))
+                {
+                    <h4><a href="https://en.wikipedia.org/wiki/@Model.recieverName">@Model.recieverName/@Model.recieverPosition</a></h4>
+                }
+                else
+                {
+                    <h4>No Top 50 Reciever</h4>
+                }
+                      
             </div>
 
          </div>

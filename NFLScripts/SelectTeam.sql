@@ -3,7 +3,7 @@ GO
 -- =============================================
 -- Author:		Bailey Strum
 -- Create date: 1/31/2017
--- Description:	Gets the team by their name and returns all db values
+-- Description:	Gets the players by their team and return it to the datacontroller
 
 -- =============================================
 CREATE PROCEDURE dbo.sp_GetTeam

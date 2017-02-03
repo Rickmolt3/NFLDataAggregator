@@ -42,13 +42,17 @@ namespace NFLData.Models
 
         //the two properties below are used to join the recieving and rushing tables to the team table in a stored proc and return popular players.
         [DisplayName("Name:")]
+        [DefaultValue("No player in the top 50 of rushers")]
         public string rusherName { get; set; }
 
         [DisplayName("Position:")]
         public string rusherPosition { get; set; }
 
+        [DisplayName("Name:")]
+        [DefaultValue("No player in the top 50 of recievers")]
         public string recieverName { get; set; }
 
+        [DisplayName("Position:")]
         public string recieverPosition { get; set; }
 
 

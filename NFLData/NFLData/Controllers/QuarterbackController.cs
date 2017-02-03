@@ -39,7 +39,7 @@ namespace NFLData.Controllers
 
             List<PlayerModel> pm = dc.GetAllQbs();
 
-            return View("QuarterbackStats", pm);
+            return View("QuarterbackStats",pm);
         }
 
         //BEGINNING OF THE NEW PAGE HEADER QUARTERBACK YARDS
