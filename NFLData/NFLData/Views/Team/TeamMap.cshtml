@@ -19,26 +19,30 @@
 <div id="map"></div>
 <script>
     function initMap() {
-            var myloc = {lat: 39.50 , lng: -95.35}; 
+            var myloc = {lat: 39.50 , lng: -95.35};
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 4,
                 center: myloc
             });
-        
-            @foreach (var item in Model)
+
+        @foreach (var item in Model)
             {
                 <text>
+
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(@item.Latitude,@item.Longitude),
                     map: map,
-                    title : '@item.Location' //add more properties or animations etc. Change this from city to team name
+                    title: '@item.TeamName , @item.Location'
                 });
-                
+
+                @*in the future add better content like when the mouse hits the marker display an info window with team info instead of the title*@
+
                 </text>
 
             }
-
+         
     }
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAouj0O35FNcvrh1pbfq_ksRGmjDY_WD9I&callback=initMap">
 </script>

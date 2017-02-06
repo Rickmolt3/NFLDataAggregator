@@ -86,7 +86,7 @@ namespace NFLData.Controllers.DataControllers
             var location = (from drRow in ds.Tables[0].AsEnumerable()
                          select new TeamLocation()
                          {
-
+                             TeamName = drRow.Field<string>("TeamName"),
                              Location = drRow.Field<string>("TeamCity"),
                              Latitude = drRow.Field<decimal>("Latitude"),
                              Longitude = drRow.Field<decimal>("Longitude"),

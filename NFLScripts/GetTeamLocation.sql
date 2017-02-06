@@ -9,7 +9,9 @@ GO
 CREATE PROCEDURE dbo.sp_GetTeamLocation
 
 AS
-SELECT TeamCity,
+SELECT	
+	   TeamName,
+	   TeamCity,
 	   Latitude,
 	   Longitude
 

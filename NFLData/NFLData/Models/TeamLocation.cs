@@ -7,6 +7,8 @@ namespace NFLData.Models
 {
     public class TeamLocation
     {
+        public string TeamName { get; set; }
+
         public string Location { get; set; }
 
         public decimal Latitude { get; set; }
